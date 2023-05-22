@@ -1,0 +1,208 @@
+body
+{
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s;
+
+    &.is-visible
+    {
+        opacity: 1;
+        visibility: visible;
+        transition: all .4s;
+    }
+}
+
+.container
+{
+    margin: auto;
+}
+
+section
+{
+   height: 150vh; 
+}
+
+section.section0,
+section.section10
+{
+    height: 100vh;
+}
+
+// section.section1
+// {
+//     height: 1px;
+// }
+
+.gradient 
+{
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.8));
+    @include breakpoint(min, medium) {
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.8));
+    }; 
+}
+.gradient2
+{
+    background: rgba(0, 0, 0, .75);
+}
+
+
+body {
+    min-height: 100vh;
+    min-height: fill-available;
+    min-height: -webkit-fill-available;
+}
+html {
+    height: fill-available;
+    height: -webkit-fill-available;
+}
+
+.swiper
+{
+    height: 100vh;
+    min-height: fill-available;
+    min-height: -webkit-fill-available;
+}
+
+.textbox
+{
+    background: transparent;
+    @include breakpoint(min, medium) {
+        background:rgba(0, 0, 0, .25);
+    }; 
+}
+
+section.section0 .textbox,
+section.section10 .textbox
+{
+    background: transparent;
+}
+
+// .text-container
+// {
+//     height: 100vh;
+//     min-height: fill-available;
+//     min-height: -webkit-fill-available;
+// }
+
+// .lol
+// {
+//     opacity: .5;
+// }
+#swiper-slide-00
+{
+    background-image:url('../img/this/ski_0.jpg');
+    background-position: 75% center;
+
+    @include breakpoint(min, medium) {
+        background-position: center;
+    }; 
+}
+
+#swiper-slide-01
+{
+    background-image:url('../img/this/ski_2.jpg');
+    background-position: 75% center;
+
+    @include breakpoint(min, medium) {
+        background-position: center;
+    }; 
+}
+
+#swiper-slide-02
+{
+    background-image:url('../img/this/ski_3.jpg');
+    background-position: 70% center;
+
+    @include breakpoint(min, medium) {
+        background-position: center;
+    }; 
+}
+
+#swiper-slide-03
+{
+    background-image:url('../img/this/ski_4.jpg');
+    background-position: 60% center;
+
+    @include breakpoint(min, medium) {
+        background-position: center;
+    }; 
+}
+
+#swiper-slide-04
+{
+    background-image:url('../img/this/ski_5.jpg');
+    background-position: 35% center;
+
+    @include breakpoint(min, medium) {
+        background-position: center;
+    }; 
+}
+
+#swiper-slide-05
+{
+    background-image:url('../img/this/ski_6.jpg');
+    background-position: 63% center;
+
+    @include breakpoint(min, medium) {
+        background-position: center;
+    }; 
+}
+
+#swiper-slide-06
+{
+    background-image:url('../img/this/ski_7.jpg');
+    background-position: 26% center;
+
+    @include breakpoint(min, medium) {
+        background-position: center;
+    }; 
+}
+
+#swiper-slide-07
+{
+    background-image:url('../img/this/ski_8.jpg');
+    background-position: 52% center;
+
+    @include breakpoint(min, medium) {
+        background-position: center;
+    }; 
+}
+
+#swiper-slide-08
+{
+    background-image:url('../img/this/ski_9.jpg');
+    background-position: 85% center;
+
+    @include breakpoint(min, medium) {
+        background-position: center;
+    }; 
+}
+
+#swiper-slide-09
+{
+    background-image:url('../img/this/ski_10.jpg');
+    background-position: 35% center;
+
+    @include breakpoint(min, medium) {
+        background-position: center;
+    }; 
+}
+
+#swiper-slide-10
+{
+    background: #202124;
+    background-position: 68% center;
+
+    @include breakpoint(min, medium) {
+        background-position: center top;
+    }; 
+}
+
+.mouse 
+{
+    margin: auto;
+    @include breakpoint(min, medium) {
+        margin: initial;
+    }; 
+}
+

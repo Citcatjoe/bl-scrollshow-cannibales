@@ -1,0 +1,313 @@
+{% use '_blocks.html.twig' %}
+
+<!DOCTYPE HTML>
+
+<html lang="fr" style="background:#202124;"> 
+	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+		<link rel="stylesheet" href="css/main.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		{# <?php include 'hb_card_tp.php'; ?> #}
+		{{ block('head_brand') }}
+	</head>
+ 
+	<body>
+		{{ block('gtm') }} 
+		{{ block('header') }}      
+		<!-- IMAGES ONLY HERE -->
+		<div class="swiper scene fixed w-full bg-center bg-cover"> 
+			<div class="swiper-wrapper">
+				<!-- Slides -->
+				<div id="swiper-slide-00" class="swiper-slide bg-cover relative"><div class="gradient absolute w-full h-full md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}0{%endif%}</p></div>
+				<div id="swiper-slide-01" class="swiper-slide bg-center bg-cover relative"><div class="gradient absolute w-full h-full md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}1{%endif%}</p></div>
+				<div id="swiper-slide-02" class="swiper-slide bg-cover relative"><div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}2{%endif%}</p></div>
+				<div id="swiper-slide-03" class="swiper-slide bg-cover relative"><div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}3{%endif%}</p></div>
+				<div id="swiper-slide-04" class="swiper-slide bg-cover relative"><div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}4{%endif%}</p></div>
+				<div id="swiper-slide-05" class="swiper-slide bg-cover relative"><div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}5{%endif%}</p></div>
+				<div id="swiper-slide-06" class="swiper-slide bg-cover relative"><div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}5{%endif%}</p></div>
+				<div id="swiper-slide-07" class="swiper-slide bg-cover relative"><div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}5{%endif%}</p></div>
+				<div id="swiper-slide-08" class="swiper-slide bg-cover relative"><div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}5{%endif%}</p></div>
+				<div id="swiper-slide-09" class="swiper-slide bg-cover relative"><div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}5{%endif%}</p></div>
+				<div id="swiper-slide-10" class="swiper-slide bg-cover relative"><div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}5{%endif%}</p></div>
+				<div id="swiper-slide-11" class="swiper-slide bg-center bg-cover relative" style="background:#202124;"><div class="gradient absolute w-full h-1/2 bottom-0"></div><h1 style="font-size:96px; color:red;">{%if debugSlider %}footer{%endif%}</h1></div>
+			</div>
+			<!-- If we need pagination -->
+			<!-- <div class="swiper-pagination"></div> -->
+
+			<!-- If we need navigation buttons -->
+			<!-- <div class="swiper-button-prev"></div> -->
+			<!-- <div class="swiper-button-next"></div> -->
+
+			<!-- If we need scrollbar -->
+			<!-- <div class="swiper-scrollbar"></div> -->
+		</div>
+		
+		<div class="container max-w-screen-2xl px-4 relative z-10">
+			
+
+			<section class="section0 container intro py-8 mb-96 max-w-6xl bg-transparent overflow-auto relative">
+				<div class="text-center md:text-left container textbox w-full md:w-1/2 absolute md:bottom-1/2 md:translate-y-2/4 bottom-4 translate-y-0">
+					<h1 class="text-white text-3xl md:text-6xl mb-3 md:mb-6">Qui sont les skieurs suisses qui ramèneront une médaille?</h1>
+					<!-- <p class="font-light text-white text-lg md:text-xl opacity-80">Demandez le programme! Voici ce qui attend nos stars</p> -->
+					<p class="text-white text-l md:text-xl  mb-2 md:mb-4 opacity-70">Dès ce lundi 6 février, les stations de Courchevel et Méribel accueillent les Championnats du monde de ski alpin. Cette 47e édition devrait sourire aux Suisses, dont la délégation sera emmenée par Lara Gut-Behrami et Marco Odermatt. Découvrez les chances de médaille pour chaque athlète et chaque course.
+					</p>
+					{{ block('scroller') }}
+				</div> 
+				<div id="trigger0" class="trigger absolute top-8 w-full h-1"></div>
+			</section>      
+			
+			<section class="section1 container py-8 max-w-6xl overflow-auto relative">
+				<div class="textbox w-full md:w-1/2 p-0 md:p-4">
+					<p class="font-bold md:text-left text-2xl md:text-5xl text-white">Marco Odermatt</p>
+					<div class="grid grid-cols-1 py-4">
+						<span class="block text-white opacity-70 font-bold underline underline-offset-1 mb-2">Chance de médaille</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Combiné alpin le 7 février</span>
+							<img src="img/star1.svg" alt="Icône 1 étoile1" class="translate-y-1.5">
+						</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Super-G le 9 février</span>
+							<img src="img/star5.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Descente le 12 février</span>
+							<img src="img/star4.svg" alt="Icône 4 étoiles" class="translate-y-1.5">
+						</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Géant le 17 février</span>
+							<img src="img/star5.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+					</div>
+					<p class="text-white text-l md:text-xl mb-4">Marco Odermatt survole cette saison. Sa blessure à un genou n’est plus qu’un mauvais souvenir. Le&nbsp;Nidwaldien de 25 ans peut viser trois titres mondiaux. Il pourrait même se lancer dans le combiné alpin. En Savoie, le nouveau roi du ski cherchera aussi à faire oublier ses premiers Championnats du monde ratés, en 2021 à Cortina (It).</p>
+					<!-- <p class="text-white text-xs opacity-70">Legende de la photo/crédit</p> -->
+				</div>
+				<div id="trigger1" class="trigger absolute top-8 w-full h-1"></div>
+			</section>      
+			
+			<section class="section2 container py-8 max-w-6xl overflow-auto relative">
+				<div class="textbox w-full md:w-1/2 p-0 md:p-4">
+					<p class="font-bold md:text-left text-2xl md:text-5xl text-white">Lara Gut-Behrami</p>
+					<div class="grid grid-cols-1 py-4">
+						<span class="block text-white opacity-70 font-bold underline underline-offset-1 mb-2">Chance de médaille</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Super-G le 8 février</span>
+							<img src="img/star4.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Descente le 11 février</span>
+							<img src="img/star5.svg" alt="Icône 4 étoiles" class="translate-y-1.5">
+						</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Géant le 16 février</span>
+							<img src="img/star5.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+					</div>
+					<p class="text-white text-l md:text-xl mb-4">Lara Gut-Behrami doit défendre deux titres de championne du monde, en géant et en super-G. Toujours dans le coup cette saison, la Tessinoise sera difficile à battre. La skieuse de 31 ans peut viser trois médailles. Elle en compte déjà huit dans son riche palmarès.</p>
+					<!-- <p class="text-white text-xs opacity-70">Legende de la photo/crédit</p> -->
+				</div>
+				<div id="trigger2" class="trigger absolute top-8 w-full h-1"></div>
+			</section> 
+		
+			<section class="section3 container py-8 max-w-6xl overflow-auto relative">
+				<div class="textbox w-full md:w-1/2 p-0 md:p-4 float-right">
+					<p class="font-bold md:text-left text-2xl md:text-5xl text-white">Wendy Holdener</p>
+					<div class="grid grid-cols-1 py-4">
+						<span class="block text-white opacity-70 font-bold underline underline-offset-1 mb-2">Chance de médaille</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Combiné alpin le 6 février</span>
+							<img src="img/star5.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Parallèle le 15 février</span>
+							<img src="img/star3.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Géant le 16 février</span>
+							<img src="img/star3.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Slalom le 18 février</span>
+							<img src="img/star5.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+					</div>
+					<p class="text-white text-l md:text-xl mb-4">Wendy Holdener va-t-elle lancer la récolte suisse dès la première course? La double championne du monde de la discipline sera l’une des favorites du combiné alpin ce lundi 6 février. La Schwytzoise est entrée dans une autre dimension cette saison en fêtant ses deux premiers succès en slalom. Elle sera aussi candidate à l'or entre les piquets, à condition que Mikaela Shiffrin se rate.
+					</p>
+					<!-- <p class="text-white text-xs opacity-70">Legende de la photo/crédit</p> -->
+				</div>
+				<div id="trigger3" class="trigger absolute top-8 w-full h-1"></div>
+			</section> 
+			
+			<section class="section4 container py-8 max-w-6xl overflow-auto relative">
+				<div class="textbox w-full md:w-1/2 p-0 md:p-4">
+					<p class="font-bold md:text-left text-2xl md:text-5xl text-white">Loïc Meillard</p>
+					<div class="grid grid-cols-1 py-4">
+						<span class="block text-white opacity-70 font-bold underline underline-offset-1 mb-2">Chance de médaille</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Combiné alpin le 7 février</span>
+							<img src="img/star5.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Super-G le 9 février</span>
+							<img src="img/star2.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Parallèle le 15 février</span>
+							<img src="img/star3.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Géant le 17 février</span>
+							<img src="img/star5.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Slalom le 19 février</span>
+							<img src="img/star4.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+					</div>
+					<p class="text-white text-l md:text-xl mb-4">Le Romand a débloqué son compteur en Coupe du monde de géant dans la nuit de Schladming (Aut). Un&nbsp;succès qui fait du skieur d’Hérémence un concurrent de Marco Odermatt pour le titre mondial. Il&nbsp;ne faut pas non plus oublier Gino Caviezel, qui est aussi monté sur le podium en Autriche. En combiné, Loïc Meillard aura une chance dès le début de la compétition. Il avait obtenu le bronze aux Mondiaux de Cortina en 2021. Un métal aussi remporté lors du décrié géant parallèle.
+					</p>
+					<!-- <p class="text-white text-xs opacity-70">Legende de la photo/crédit</p> -->
+				</div>
+				<div id="trigger4" class="trigger absolute top-8 w-full h-1"></div>
+			</section> 
+
+			<section class="section5 container py-8 max-w-6xl overflow-auto relative">
+				<div class="textbox w-full md:w-1/2 p-0 md:p-4 float-right">
+					<p class="font-bold md:text-left text-2xl md:text-5xl text-white">Corinne Suter</p>
+					<div class="grid grid-cols-1 py-4">
+						<span class="block text-white opacity-70 font-bold underline underline-offset-1 mb-2">Chance de médaille</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Super-G le 8 février</span>
+							<img src="img/star4.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Descente le 11 février</span>
+							<img src="img/star5.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+					</div>
+					<p class="text-white text-l md:text-xl mb-4">C’est simple, Corinne Suter est tenante du titre de l’épreuve reine, la descente, aussi bien aux Jeux olympiques qu’aux Championnats du monde. La&nbsp;spécialiste de vitesse se sublime lors des grands rendez-vous. Dans les Dolomites, elle avait encore pris l’argent en super-G, complétant un doublé suisse derrière Lara Gut-Behrami. La Schwytzoise s’est fait peur en tombant la semaine dernière à Cortina, mais elle devrait être d’attaque.
+					</p>
+					<!-- <p class="text-white text-xs opacity-70">Legende de la photo/crédit</p> -->
+				</div>
+				<div id="trigger5" class="trigger absolute top-8 w-full h-1"></div>
+			</section> 
+
+			<section class="section6 container py-8 max-w-6xl overflow-auto relative">
+				<div class="textbox w-full md:w-1/2 p-0 md:p-4">
+					<p class="font-bold md:text-left text-2xl md:text-5xl text-white">Niels Hintermann</p>
+					<div class="grid grid-cols-1 py-4">
+						<span class="block text-white opacity-70 font-bold underline underline-offset-1 mb-2">Chance de médaille</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Descente le 12 février</span>
+							<img src="img/star3.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+					</div>
+					<p class="text-white text-l md:text-xl mb-4">L’équipe de Suisse est orpheline de Beat Feuz. Son successeur pourrait s’appeler Niels Hintermann. À&nbsp;27&nbsp;ans, le descendeur a fêté un podium prestigieux (3e) à Kitzbühel (Aut). Un résultat relégué au second plan par le week-end d’adieu de «Kugelblitz».
+					</p>
+					<!-- <p class="text-white text-xs opacity-70">Legende de la photo/crédit</p> -->
+				</div>
+				<div id="trigger6" class="trigger absolute top-8 w-full h-1"></div>
+			</section> 
+
+			<section class="section7 container py-8 max-w-6xl overflow-auto relative">
+				<div class="textbox w-full md:w-1/2 p-0 md:p-4">
+					<p class="font-bold md:text-left text-2xl md:text-5xl text-white">Daniel Yule</p>
+					<div class="grid grid-cols-1 py-4">
+						<span class="block text-white opacity-70 font-bold underline underline-offset-1 mb-2">Chance de médaille</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Slalom le 19 février</span>
+							<img src="img/star4.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+					</div>
+					<p class="text-white text-l md:text-xl mb-4">Le Valaisan devra ronger son frein jusqu’au dernier week-end de compétition. Déjà sacré par équipe aux JO (2018) et aux Mondiaux (2019), le slalomeur est désormais mûr pour décrocher sa première médaille individuelle lors d'un grand événement. Ses deux victoires à Madonna (It) et Kitzbühel cette saison font de lui un favori en puissance à Courchevel. Il ne faut pas oublier Ramon Zenhäusern entre les piquets. Le Haut-Valaisan est revenu sur le podium à Schladming fin janvier (2e).
+					</p>
+					<!-- <p class="text-white text-xs opacity-70">Legende de la photo/crédit</p> -->
+				</div>
+				<div id="trigger7" class="trigger absolute top-8 w-full h-1"></div>
+			</section> 
+
+			<section class="section8 container py-8 max-w-6xl overflow-auto relative">
+				<div class="textbox w-full md:w-1/2 p-0 md:p-4 float-right">
+					<p class="font-bold md:text-left text-2xl md:text-5xl text-white">Michelle Gisin</p>
+					<div class="grid grid-cols-1 py-4">
+						<span class="block text-white opacity-70 font-bold underline underline-offset-1 mb-2">Chance de médaille</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Combiné alpin le 6 février</span>
+							<img src="img/star3.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Super-G le 8 février</span>
+							<img src="img/star3.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Descente le 11 février</span>
+							<img src="img/star2.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Géant le 16 février</span>
+							<img src="img/star0.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Slalom le 18 février</span>
+							<img src="img/star0.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+					</div>
+					<p class="text-white text-l md:text-xl mb-4">Michelle Gisin connaît un hiver compliqué depuis son changement de matériel. Double championne olympique en titre de combiné, l’Obwaldienne aura sa chance dans la discipline. Elle y a déjà remporté le bronze (2021) et l’argent (2019) aux Mondiaux. Plus à l’aise en super-G et en descente, elle semble trop éloignée des meilleures pour espérer monter sur le podium dans les disciplines techniques. 
+
+					</p>
+					<!-- <p class="text-white text-xs opacity-70">Legende de la photo/crédit</p> -->
+				</div>
+				<div id="trigger8" class="trigger absolute top-8 w-full h-1"></div>
+			</section> 
+
+			<section class="section9 container py-8 max-w-6xl overflow-auto relative">
+				<div class="textbox w-full md:w-1/2 p-0 md:p-4">
+					<p class="font-bold md:text-left text-2xl md:text-5xl text-white">Les quatre mousquetaires</p>
+					<div class="grid grid-cols-1 py-4">
+						<span class="block text-white opacity-70 font-bold underline underline-offset-1 mb-2">Chance de médaille</span>
+						<span class="text-white block overflow-auto">
+							<span class="float-left mr-2 opacity-70">Épreuve par équipes</span>
+							<img src="img/star3.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
+						</span>
+					</div>
+					<p class="text-white text-l md:text-xl mb-4">La sélection pour l'épreuve par équipe sera annoncée plus tard. Loïc Meillard, Andrea Ellenberger ou Wendy Holdener font partie des prétendants à une place dans le quatuor. La neige savoyarde avait porté chance aux Suisses, qui ont remporté l’épreuve lors des finales de la Coupe du monde en mars 2022. 
+
+					</p>
+					<!-- <p class="text-white text-xs opacity-70">Legende de la photo/crédit</p> -->
+				</div>
+				<div id="trigger9" class="trigger absolute top-8 w-full h-1"></div>
+			</section> 
+
+			<section class="section10 container py-8 max-w-6xl overflow-auto relative">
+				<div class="textbox w-80 absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4">
+					{{ block('credits') }}  
+				</div>
+				<div id="trigger10" class="trigger absolute top-8 w-full h-1"></div>
+			</section> 
+			
+			
+			<script src="js/vendor/modernizr-3.11.2.min.js"></script> 
+			<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+			<script src="js/ScrollMagic.min.js"></script>
+			<!-- <script src="js/debug.addIndicators.min.js"></script> -->
+			<!-- <script src="js/isInViewport.min.js"></script> -->
+			<script src="js/main.js"></script>
+			<script src="js/headroom.min.js"></script>
+			<script src="https://cdn.tailwindcss.com"></script>
+
+			
+			<!-- <script>
+				window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+				ga('create', 'G-BVVLW3LSNH', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+			</script>
+			<script src="https://www.google-analytics.com/analytics.js" async></script> -->
+			
+		</div>  
+		
+	</body>
+</html>

@@ -1,0 +1,18 @@
+{
+	"title": "Qui sont les skieurs suisses qui ramèneront une médaille?",
+	"description": "Demandez le programme! Voici ce qui attend nos stars",
+	"authors": {
+		"photos": "AFP/Keystone",
+		"writer": "Ugo Curty",
+		"dev": "César Greppin"
+	},
+	"imgSocial": "social.jpg",
+	"headertheme": "neg", 
+	"headerBoxed": false,
+	"pubDate": "2020-07-23T11:00:00+00:00",
+	"partner": {
+		"logo": "img/empty.png",
+		"link": "https://www.blick.ch/"
+	},
+	"debugSlider": false
+}
