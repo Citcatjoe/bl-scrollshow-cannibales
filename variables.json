@@ -1,9 +1,10 @@
 {
-	"title": "Qui sont les skieurs suisses qui ramèneront une médaille?",
-	"description": "Demandez le programme! Voici ce qui attend nos stars",
+	"title": " J’ai infiltré un forum cannibale ",
+	"description": "Certaines personnes sont très excitées sexuellement par l’idée de manger quelqu’un ou de se faire engloutir. Sur Internet, un forum donne vie à ces fantasmes...",
 	"authors": {
-		"photos": "AFP/Keystone",
-		"writer": "Ugo Curty",
+		"prod": "Creative Lab Blick Suisse romande",
+		"photos": "Johanna Castellanos Dubuis",
+		"writer": "",
 		"dev": "César Greppin"
 	},
 	"imgSocial": "social.jpg",
@@ -16,3 +17,4 @@
 	},
 	"debugSlider": false
 }
+

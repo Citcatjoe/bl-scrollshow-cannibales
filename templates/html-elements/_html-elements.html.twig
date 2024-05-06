@@ -1,0 +1,383 @@
+{% block image %}
+	<img src="img/this/chi.svg">
+{% endblock %} 
+
+{% block loading_overlay %}
+	<div class="fixed w-full h-full bg-white z-50">
+		<img src="https://storytelling.blick.ch/fr/__is_embed_somewhere/img/blick.svg" alt="Logo de Blick" class="w-64 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">  
+	</div>
+{% endblock %}
+
+{% block authors %}
+<div class="container flex py-4 max-w-2xl border-y">
+	<div class="author w-52">
+		{# <a target="_blank" href="https://www.blick.ch/fr/auteurs/gre-gory-beaud-journaliste-blick-id16519809.html" class="flex items-center"> #}
+		<span class="flex items-center">
+			<img src="https://storytelling.blick.ch/fr/__is_embed_somewhere/img/{{authors.writer.fname|replace({'é': 'e'})|lower}}-{{ authors.writer.lname|replace({' ': '-'})|lower }}.{{authors.writer.filetype}}" alt="Portrait de&nbsp;{{authors.writer.fname}}&nbsp;{{authors.writer.lname}}" class="rounded-full w-12 mr-2.5">
+			<div class="align-text-bottom text-xs">
+				Par <span class="inline-block font-extrabold">{% if authors.writer.url is defined and authors.writer.url is not empty %}<a href="{{authors.writer.url}}" target="_blank" class="underline">{% endif %}{{ authors.writer.fname ~ ' ' ~ authors.writer.lname }}{% if authors.writer.url is defined and authors.writer.url is not empty %}</a>{% endif %}</span>
+				<span class="inline-block">{{authors.writer.title}}</span>
+			</div>
+		</span>
+		{# </a> #}
+	</div>
+	<!-- <div class="author w-52">
+		<a href="" class="flex items-center">
+		<img src="https://storytelling.blick.ch/fr/__is_embed_somewhere/img/fabien-goubet.png" alt="Portrait de Fabien Goubet" class="rounded-full w-12 mr-2.5">
+		<div class="align-text-bottom text-xs">
+			Par <span class="inline-block font-extrabold underline">Fabien Goubet</span>
+			<span class="inline-block">Journaliste Blick</span></div>
+		</a>
+	</div> -->
+</div>
+{% endblock %}
+
+{% block scroller %}
+	<div class="scroller text-center pt-0 md:pt-8 scale-75 md:scale-100">
+		<div class="mouse"></div>
+	</div>
+{% endblock %}
+
+{% block credits2 %}
+	<div class="credits text-white text-xl">
+		<a href="https://www.blick.ch/fr/" target="_blank>"><img src="https://storytelling.blick.ch/fr/__is_embed_somewhere/img/blick.svg" alt="Logo de Blick" class="w-36 mb-8"></a>
+		<p class="mb-8"> 
+			<span class="font-thin opacity-80">Production</span><br>
+			<span class="font-semibold">Creative Lab Blick Suisse romande</span>
+		</p> 
+		{% if authors.photos %}
+		<p class="mb-8">
+			<span class="font-thin opacity-80">Images</span><br>
+			<span class="font-semibold">{{authors.photos}}</span>
+		</p>
+		{% endif %}
+		{% if authors.videos %}
+		<p class="mb-8">
+			<span class="font-thin opacity-80">Vidéos</span><br>
+			<span class="font-semibold">{{authors.videos}}</span>
+		</p>
+		{% endif %}
+		{% if authors.writer %}
+		<p class="mb-8">
+			<span class="font-thin opacity-80">Texte</span><br>
+			<span class="font-semibold">{{ authors.writer.fname ~ ' ' ~ authors.writer.lname }}</span>
+		</p>
+		{% endif %}
+		{% if authors.dev %}
+		<p>
+			<span class="font-thin opacity-80">Développement</span><br>
+			<span class="font-semibold">{{authors.dev}}</span>
+		</p>
+		{% endif %}
+	</div>
+{% endblock %}
+
+{% block credits %} 
+	<div class="credits text-white text-xl">
+		<a href="https://www.blick.ch/fr/" target="_blank>">
+			<img src="img/blick.svg" alt="Logo de Blick" class="w-36 mx-auto mb-8">
+		</a>
+		<p class="mb-8 bg-transparent border-0 p-0">
+			<span class="font-thin opacity-80 text-white">Production</span><br>
+			<span class="font-semibold text-white">Blick Suisse romande</span>
+		</p>
+		<p class="mb-8 bg-transparent border-0 p-0">
+			<span class="font-thin opacity-80 text-white">Illustrations</span><br>
+			<span class="font-semibold text-white">{{authors.photos}}</span>
+		</p>
+		<p class="mb-8 bg-transparent border-0 p-0">
+			<span class="font-thin opacity-80 text-white">Textes</span><br>
+			<span class="font-semibold text-white"><a href='https://www.blick.ch/fr/auteurs/amit-juillard-journaliste-blick-id16519941.html#' target='_blank' class='underline '>Amit Juillard</a></span>
+		</p>
+		<p class="mb-8 bg-transparent border-0 p-0">
+			<span class="font-thin opacity-80 text-white">Développement</span><br>
+			<span class="font-semibold text-white">{{authors.dev}}</span>
+		</p>
+	</div>
+{% endblock %}
+
+{% block frame %}
+<div class="frame fixed w-full md:h-6 z-40"></div>
+<div class="frame fixed w-full md:h-6 z-40 bottom-0"></div>
+<div class="frame fixed h-full md:w-6 z-40"></div>
+<div class="frame fixed h-full md:w-6 z-40 right-0"></div>
+{% endblock %}
+
+{% block scenehero %}
+	<figure class="intro absolute top-4 bottom-4 w-16 bg-white">
+		{# <img src="img/this/intro-amit-blank.svg" alt="" class=""> #}
+		{# <img src="img/this/intro-amit-corps.png" alt="" class="absolute "> #}
+		{# <img src="img/this/intro-amit-yeux.svg" alt="" class="absolute -top-4 "> #}
+	</figure>
+{% endblock %}
+
+{% block scene01 %}
+	<figure class="s01 relative">
+		<img src="img/this/s04-blank.svg" alt="" class="w-full">
+		<img src="img/this/s01-toque.svg" alt="" class="s01-toque absolute top-0 w-full">
+		<img src="img/this/s01-meuf.svg" alt="" class="s01-meuf absolute top-0 w-full">
+		<img src="img/this/s01-casquette.svg" alt="" class="s01-casquette absolute top-0 w-full">
+		<img src="img/this/s01-chauve.svg" alt="" class="s01-chauve absolute top-0 w-full">
+		<img src="img/this/s01-cigarette.svg" alt="" class="s01-cigarette absolute top-0 w-full">
+		<img src="img/this/s01-couteau.svg" alt="" class="s01-couteau absolute top-0 w-full">
+		<img src="img/this/s01-croise.svg" alt="" class="s01-croise absolute top-0 w-full">
+		<img src="img/this/s01-dahmer.svg" alt="" class="s01-dahmer absolute top-0 w-full">
+		<img src="img/this/s01-derniere.svg" alt="" class="s01-derniere absolute top-0 w-full">
+		<img src="img/this/s01-detective.svg" alt="" class="s01-detective absolute top-0 w-full">
+		<img src="img/this/s01-echarpe.svg" alt="" class="s01-echarpe absolute top-0 w-full">
+		<img src="img/this/s01-forte.svg" alt="" class="s01-forte absolute top-0 w-full">
+		<img src="img/this/s01-meuf.svg" alt="" class="s01-meuf absolute top-0 w-full">
+		<img src="img/this/s01-oeuf.svg" alt="" class="s01-oeuf absolute top-0 w-full">
+		<img src="img/this/s01-sac.svg" alt="" class="s01-sac absolute top-0 w-full">
+		<img src="img/this/s01-sandwich.svg" alt="" class="s01-sandwich absolute top-0 w-full">
+		<img src="img/this/s01-valise.svg" alt="" class="s01-valise absolute top-0 w-full">
+		<img src="img/this/s01-ventre.svg" alt="" class="s01-ventre absolute top-0 w-full"> 
+	</figure>
+{% endblock %}
+
+{% block scene02 %}
+	<figure class="s02 relative">
+		<img src="img/this/s02-1.svg" alt="" class="opacity-0 w-full">
+		<img src="img/this/s02-1.svg" alt="" class="s02-1 absolute top-0 w-full">
+		<img src="img/this/s02-2.svg" alt="" class="s02-2 absolute top-0 w-full">
+		<img src="img/this/s02-3.svg" alt="" class="s02-3 absolute top-0 w-full">
+		<img src="img/this/s02-4.svg" alt="" class="s02-4 absolute top-0 w-full">
+		<img src="img/this/s02-5.svg" alt="" class="s02-5 absolute top-0 w-full">
+		<img src="img/this/s02-6.svg" alt="" class="s02-6 absolute top-0 w-full">
+	</figure>
+{% endblock %}
+
+{% block scene03 %}
+	<figure class="s03 relative">
+		<img src="img/this/s03-1.svg" alt="" class="s03-1 w-full">
+		<img src="img/this/s03-2.svg" alt="" class="s03-2 absolute top-0 w-full">
+		<img src="img/this/s03-3.svg" alt="" class="s03-3 absolute top-0 w-full">
+		<img src="img/this/s03-4.svg" alt="" class="s03-4 absolute top-0 w-full">
+		<img src="img/this/s03-5.svg" alt="" class="s03-5 absolute top-0 w-full">
+		<img src="img/this/s03-6.svg" alt="" class="s03-6 absolute top-0 w-full">
+	</figure>
+{% endblock %}
+
+{% block scene04 %}
+	<figure class="s04 relative">
+		<img src="img/this/s04-blank.svg" alt="" class="s04-blank w-full">
+		<img src="img/this/s04-homme1.svg" alt="" class="s04-homme1 absolute top-0 w-full">
+		<img src="img/this/s04-homme2.svg" alt="" class="s04-homme2 absolute top-0 w-full">
+		<img src="img/this/s04-table.svg" alt="" class="s04-table absolute top-0 w-full">
+		<img src="img/this/s04-homme1-mains.svg" alt="" class="s04-homme1-mains absolute top-0 w-full">
+		<img src="img/this/s04-femme1.svg" alt="" class="s04-femme1 absolute top-0 w-full">
+		<img src="img/this/s04-femme2.svg" alt="" class="s04-femme2 absolute top-0 w-full">
+		<img src="img/this/s04-femme3.svg" alt="" class="s04-femme3 absolute top-0 w-full">
+
+	</figure>
+{% endblock %}
+
+{% block scene0506 %}
+	<figure class="s0506 relative">
+		<img src="img/this/s04-blank.svg" alt="" class="s04-blank w-full">
+		<div class="s0506-amit-elems w-full h-full absolute top-0">
+			{# <img src="img/this/s0506-amit-fond.svg" alt="" class="s0506-amit-fond absolute top-0 w-full"> #}
+			<img src="img/this/s0506-amit-corps.svg" alt="" class="s0506-amit-corps absolute top-0 w-full">
+			<img src="img/this/s0506-amit-pupilles.svg" alt="" class="s0506-amit-pupilles absolute top-0 w-full">
+			<img src="img/this/s0506-amit-yeux-ouverts.svg" alt="" class="s0506-amit-yeux-ouverts absolute top-0 w-full">
+			<img src="img/this/s0506-amit-yeux-ouverts-grands.svg" alt="" class="s0506-amit-yeux-ouverts-grands absolute top-0 w-full">
+			<img src="img/this/s0506-amit-yeux-fermes.svg" alt="" class="s0506-amit-yeux-fermes absolute top-0 w-full">
+			<img src="img/this/s0506-amit-arrow.svg" alt="" class="s0506-amit-arrow absolute top-0 w-full">
+		</div>
+		{# <div class="s0506-smilingvilain-elems w-full h-full absolute top-0">
+			<img src="img/this/s0506-smilingvilain-gone.png" alt="" class="s0506-smilingvilain-gone absolute top-0 w-full">
+			<img src="img/this/s0506-smilingvilain.png" alt="" class="s0506-smilingvilain absolute top-0 w-full">
+			<img src="img/this/s0506-explosion1.png" alt="" class="s0506-explosion1 absolute top-0 w-full">
+			<img src="img/this/s0506-explosion2.png" alt="" class="s0506-explosion2 absolute top-0 w-full">
+			<img src="img/this/s0506-explosion3.png" alt="" class="s0506-explosion3 absolute top-0 w-full">
+			<img src="img/this/s0506-explosion4.png" alt="" class="s0506-explosion4 absolute top-0 w-full">
+			<img src="img/this/s0506-explosion5.png" alt="" class="s0506-explosion5 absolute top-0 w-full">
+			<img src="img/this/s0506-explosion6.png" alt="" class="s0506-explosion6 absolute top-0 w-full">
+			<img src="img/this/s0506-explosion7.png" alt="" class="s0506-explosion7 absolute top-0 w-full">
+			<img src="img/this/s0506-explosion8.png" alt="" class="s0506-explosion8 absolute top-0 w-full">
+			<img src="img/this/s0506-explosion9.png" alt="" class="s0506-explosion9 absolute top-0 w-full">
+			<img src="img/this/s0506-explosion10.png" alt="" class="s0506-explosion10 absolute top-0 w-full">
+			<img src="img/this/s0506-explosion11.png" alt="" class="s0506-explosion11 absolute top-0 w-full">
+			<img src="img/this/s0506-explosion12.png" alt="" class="s0506-explosion12 absolute top-0 w-full">
+		</div> #}
+	</figure>
+{% endblock %}
+
+{% block scene06amit %}
+	<figure class="s06-amit">
+		<img src="img/this/s06-amit-corps.svg" alt="" class="s06-amit-corps absolute max-w-screen-2xl">
+		<img src="img/this/s06-amit-medaillon.svg" alt="" class="s06-amit-medaillon absolute max-w-screen-2xl">
+	</figure>
+{% endblock %}
+
+{% block scene06sv %}
+	<figure class="s06-sv">
+		<img src="img/this/s06-smilingvilain.svg" alt="" class="s06-smilingvilain absolute max-w-screen-2xl">
+		<img src="img/this/s06-smilingvilain-gone.svg" alt="" class="s06-smilingvilain-gone absolute max-w-screen-2xl">
+
+		<img src="img/this/s06-smilingvilain-medaillon.svg" alt="" class="s06-smilingvilain-medaillon absolute max-w-screen-2xl">
+		<img src="img/this/s06-smilingvilain-gone-medaillon.svg" alt="" class="s06-smilingvilain-gone-medaillon absolute max-w-screen-2xl">
+	</figure>
+{% endblock %}
+
+{% block scene07 %}
+	<figure class="s07 relative">
+		<img src="img/this/s04-blank.svg" alt="" class="s04-blank w-full">
+		<img src="img/this/s07-marche1.svg" alt="" class="s07-marche1 absolute top-0 w-full">
+		<img src="img/this/s07-marche2.svg" alt="" class="s07-marche2 absolute top-0 w-full">
+		<img src="img/this/s07-marche3.svg" alt="" class="s07-marche3 absolute top-0 w-full">
+		<img src="img/this/s07-marche4.svg" alt="" class="s07-marche4 absolute top-0 w-full">
+		<img src="img/this/s07-marche5.svg" alt="" class="s07-marche5 absolute top-0 w-full">
+		<img src="img/this/s07-marche6.svg" alt="" class="s07-marche6 absolute top-0 w-full">
+		<img src="img/this/s07-marche7.svg" alt="" class="s07-marche7 absolute top-0 w-full">
+		<img src="img/this/s07-marche7-yeux.png" alt="" class="s07-marche7-yeux absolute top-0 w-full">
+		<img src="img/this/s07-marche7-rire-top.svg" alt="" class="s07-marche7-rire-top absolute top-0 w-full">
+	</figure>
+{% endblock %}
+
+{% block scene08 %}
+	<figure class="s08 relative">
+		<img src="img/this/s04-blank.svg" alt="" class="s04-blank w-full">
+		<img src="img/this/s08-marche1.svg" alt="" class="s08-marche1 absolute top-0 w-full">
+		<img src="img/this/s08-marche2.svg" alt="" class="s08-marche2 absolute top-0 w-full">
+		<img src="img/this/s08-marche3.svg" alt="" class="s08-marche3 absolute top-0 w-full">
+		<img src="img/this/s08-marche4.svg" alt="" class="s08-marche4 absolute top-0 w-full">
+		<img src="img/this/s08-marche5.svg" alt="" class="s08-marche5 absolute top-0 w-full">
+		<img src="img/this/s08-marche6.svg" alt="" class="s08-marche6 absolute top-0 w-full">
+		<img src="img/this/s08-marche7.svg" alt="" class="s08-marche7 absolute top-0 w-full">
+		<img src="img/this/s08-marche7-yeux.svg" alt="" class="s08-marche7-yeux absolute top-0 w-full">
+		<img src="img/this/s08-marche7moustache1.svg" alt="" class="s08-marche7moustache1 absolute top-0 w-full">
+		<img src="img/this/s08-marche7moustache2.svg" alt="" class="s08-marche7moustache2 absolute top-0 w-full">
+		<img src="img/this/s08-marche7moustache3.svg" alt="" class="s08-marche7moustache3 absolute top-0 w-full">
+		<img src="img/this/s08-marche7moustache4.svg" alt="" class="s08-marche7moustache4 absolute top-0 w-full">
+		<img src="img/this/s08-marche7moustache5.svg" alt="" class="s08-marche7moustache5 absolute top-0 w-full">
+	</figure>
+{% endblock %}
+
+{% block outro %}
+	<figure class="outro table-container relative">
+		<img src="img/this/outro-blank.svg" alt="" class="outro-blank w-full">
+		<img src="img/this/outro-flare.svg" alt="" class="outro-flare absolute top-0 w-full">
+		<img src="img/this/outro-smoke.svg" alt="" class="outro-smoke absolute top-0 w-full">
+		<img src="img/this/outro-table1.svg" alt="" class="outro-table1 absolute top-0 w-full">
+		<img src="img/this/outro-table2.svg" alt="" class="outro-table2 absolute top-0 w-full">
+		<img src="img/this/outro-table3.svg" alt="" class="outro-table3 absolute top-0 w-full">
+		<img src="img/this/outro-table4.svg" alt="" class="outro-table4 absolute top-0 w-full">
+		<img src="img/this/outro-table5.svg" alt="" class="outro-table5 absolute top-0 w-full">
+		<img src="img/this/outro-table6.svg" alt="" class="outro-table6 absolute top-0 w-full">
+		<img src="img/this/outro-table7.svg" alt="" class="outro-table7 absolute top-0 w-full">
+		<img src="img/this/outro-table8.svg" alt="" class="outro-table8 absolute top-0 w-full">	
+	</figure>
+{% endblock %}
+
+{% block andreoli1 %}
+	<div class="msg msg-andreoli1 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+		<span class="msg-title">Le psychiatre</span>
+		<p class="antialiased msg-txt text-l md:text-lg relative leading-tight"><img src="img/this/msg-triangle.svg" alt="" class="msg-triangle1 absolute">
+			Il existe plusieurs formes de cannibalisme, toutes très rares. Celui de survie, si l’on pense à une partie de cette équipe de rugby qui a survécu 72 jours dans les Andes en mangeant les camarades décédés après un crash d’avion. Il y a celui du rituel, dans les tribus ou les sociétés ancestrales. Et puis, il y a le cannibalisme de certains criminels, dont les comportements peuvent être liés à la sexualité. D’autre part, il y a le cannibalisme fantasmatique, dans sa dimension sexuelle: la voraréphilie. Une variante orale du sadomasochisme.
+		</p>
+		<span class="msg-signature">
+			Prof. Antonio Andreoli,<br>
+			Psychiatre et psychothérapeute,<br>
+			Membre de la Société suisse de sexologie
+		</span>
+		<span class="msg-close">Fermer</span>
+		<img src="img/this/expert-andreoli.svg" alt="" class="msg-portrait w-24">
+	</div>
+{% endblock %}
+
+{% block parein1 %}
+	<div class="msg msg-parein1 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+		<span class="msg-title">Le pénaliste</span>
+		<p class="antialiased msg-txt text-l md:text-lg relative leading-tight"><img src="img/this/msg-triangle.svg" alt="" class="msg-triangle1 absolute">
+			En Suisse, le principe est la libre disposition de son corps. C’est la raison pour laquelle on doit donner son consentement avant une opération chirurgicale, par exemple. Mais peut-on consentir à être mangé? Pas facile comme question. Sur le plan pénal, un juge pourrait avoir tendance à exclure un consentement libre et éclairé pour contourner la complexité, notamment sous l'angle de la dignité humaine. Cas échéant, si la personne mutilée restait en vie, l’auteur serait poursuivi pour lésions corporelles graves. En cas de décès de la victime, pour homicide. Et si des actes devaient être commis sur elle après sa mort, on retiendrait l’atteinte à la paix des morts.
+		</p>
+		<span class="msg-signature">
+			Loïc Parein,<br>
+			Avocat
+		</span>
+		<span class="msg-close">Fermer</span>
+		<img src="img/this/expert-parein.svg" alt="" class="msg-portrait w-24">
+	</div>
+{% endblock %}
+
+{% block andreoli2 %}
+	<div class="msg msg-andreoli2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+		<span class="msg-title">Le psychiatre</span>
+		<p class="antialiased msg-txt text-l md:text-lg relative leading-tight"><img src="img/this/msg-triangle.svg" alt="" class="msg-triangle1 absolute">
+			Il est difficile de définir l’origine d’un fantasme. Elle est différente pour chaque personne. Tout dépend de ce qu’il y a dans la dimension secrète et totalement privée de celles et ceux que la mort excite. Mais, en un sens, le fantasme cannibale nous habite toutes et tous. Il vient peut-être de notre enfance, durant laquelle nous avons dû renoncer à mordre le sein de notre mère. Prenez le fait d’aimer mordiller lors d’une relation sexuelle: c’est une forme de cannibalisme soft. N’avez-vous jamais eu envie de mordre quelqu’un ou quelque chose tellement vous l’aimiez?
+
+		</p>
+		<span class="msg-signature">
+			Prof. Antonio Andreoli,<br>
+			Psychiatre et psychothérapeute,<br>
+			Membre de la Société suisse de sexologie
+		</span>
+		<span class="msg-close">Fermer</span>
+		<img src="img/this/expert-andreoli.svg" alt="" class="msg-portrait w-24">
+	</div>
+{% endblock %}
+
+{% block tatone1 %}
+	<div class="msg msg-tatone1 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+		<span class="msg-title">La sexologue</span>
+		<p class="antialiased msg-txt text-l md:text-lg relative leading-tight"><img src="img/this/msg-triangle.svg" alt="" class="msg-triangle1 absolute">
+			C’est aussi le cas lorsque quelqu’un avale les fluides de l’autre lors d’une relation sexuelle. Dans la langue française, on dit d’ailleurs vouloir dévorer ou croquer ce que l’on aime, ce que l’on trouve beau.
+		</p>
+		<span class="msg-signature">
+			Aline Alzetta-Tatone,<br>
+			Psychosexologue et thérapeute de couple
+		</span>
+		<span class="msg-close">Fermer</span>
+		<img src="img/this/expert-tatone.svg" alt="" class="msg-portrait w-24">
+	</div>
+{% endblock %}
+
+{% block andreoli3 %}
+	<div class="msg msg-andreoli3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+		<span class="msg-title">Le psychiatre</span>
+		<p class="antialiased msg-txt text-l md:text-lg relative leading-tight"><img src="img/this/msg-triangle.svg" alt="" class="msg-triangle1 absolute">
+			En psychanalyse, on parle d’introjection. Dans le deuil d’une relation sentimentale, l’amour ou la haine de la personne aimée se fait une place en nous: on lui donne un visage. Certains ont même parlé d’une incorporation cannibalique, qui expliquerait le deuil et la dépression. Comme si l’objet perdu, que nous avons symboliquement ingéré, se retourne contre nous. En somme, une personne qui en mange une autre fait, pour de vrai, ce que nous faisons toutes et tous psychiquement et inconsciemment. Manger quelqu’un, c’est le posséder complètement.
+		</p>
+		<span class="msg-signature">
+			Prof. Antonio Andreoli,<br>
+			Psychiatre et psychothérapeute,<br>
+			Membre de la Société suisse de sexologie
+		</span>
+		<span class="msg-close">Fermer</span>
+		<img src="img/this/expert-andreoli.svg" alt="" class="msg-portrait w-24">
+	</div>
+{% endblock %}
+
+{% block tatone2 %}
+	<div class="msg msg-tatone2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+		<span class="msg-title">La sexologue</span>
+		<p class="antialiased msg-txt text-l md:text-lg relative leading-tight"><img src="img/this/msg-triangle.svg" alt="" class="msg-triangle1 absolute">
+			Il me semble évident que l’immense majorité des gens qui ont ce fétiche ne passeront jamais à l’acte. Comme pour beaucoup d’autres fantasmes, on ne souhaite pas forcément qu’ils se réalisent. Pour passer à l’acte, il faudrait un manque d’empathie ou la capacité et l’envie de transgresser. Ça ne fait pas pour autant de ces personnes des psychopathes. Dans la société, il y a des psychopathes qui s’ignorent qui ne passent jamais à l’acte et d’autres qui ne le sont pas et qui succombent à leurs envies. Mais, encore une fois, avoir un fétiche ne veut pas dire franchir le pas. Environ 70% des gens qui ont des fantasmes pédophiles ne passent jamais à l’acte, par exemple.
+		</p>
+		<span class="msg-signature">
+			Aline Alzetta-Tatone,<br>
+			Psychosexologue et thérapeute de couple
+		</span>
+		<span class="msg-close">Fermer</span>
+		<img src="img/this/expert-tatone.svg" alt="" class="msg-portrait w-24">
+	</div>
+{% endblock %}
+
+{% block sceneend %}
+	<figure class="end relative">
+		<img src="img/this/end.svg" alt="" class="w-full">
+	</figure>
+{% endblock %}
+
+{% block end1 %}
+	<figure class="end relative">
+		<img src="img/this/end1.svg" alt="" class="w-full -translate-x-1/2 md:translate-x-0">
+	</figure>
+{% endblock %}
+
+{% block end2 %}
+	<figure class="end relative">
+		<img src="img/this/end2.svg" alt="" class="w-full translate-x-1/2 md:translate-x-0">
+	</figure>
+{% endblock %}

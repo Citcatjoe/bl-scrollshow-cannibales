@@ -7,16 +7,49 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $dirs  = array();
 $dirs[] = __DIR__;
-$dirs[] = __DIR__ . '/templates';
-// if (is_dir( __DIR__ . '/../../_admin/templates')) {
-// 	$dirs[] =  __DIR__ . '/../../_admin/templates';
+// Local _blocks or global _blocks ? not finished
+//$dirs[] = __DIR__ . '/templates';
+//$dirs[] = __DIR__ . '/../__is_embed_somewhere/php';
+// FTP
+//$dirs[] = __DIR__ . '/../../__is_embed_somewhere/php';
+
+
+// $templateFilePath1 = __DIR__ . '/templates/_header-and-share.html.twig';
+// if (file_exists($templateFilePath1)) {
+//     $dirs[] = __DIR__ . '/templates';
+// } else {
+//     $dirs[] = __DIR__ . '/../../__is_embed_somewhere/php'; 
 // }
 
-$debug = false;
-if (strpos($_SERVER['HTTP_HOST'], 'localhost') !== FALSE || strpos($_SERVER['HTTP_HOST'], '127.0.0.1') !== FALSE) {
-	$debug = true;
-	$dirs[] = __DIR__ . '/../web/_admin/templates';
+$templateFilePath1 = __DIR__ . '/templates/metas-and-scripts/_metas-and-scripts.html.twig';
+if (file_exists($templateFilePath1)) {
+    $dirs[] = __DIR__ . '/templates/metas-and-scripts';
+} else {
+    $dirs[] = __DIR__ . '/../../__is_embed_somewhere/php/metas-and-scripts'; 
 }
+
+$templateFilePath2 = __DIR__ . '/templates/header-and-share/_header-and-share.html.twig';
+if (file_exists($templateFilePath2)) {
+    $dirs[] = __DIR__ . '/templates/header-and-share';
+} else {
+    $dirs[] = __DIR__ . '/../../__is_embed_somewhere/php/header-and-share'; 
+}
+														 
+$templateFilePath3 = __DIR__ . '/templates/html-elements/_html-elements.html.twig';
+if (file_exists($templateFilePath3)) {
+    $dirs[] = __DIR__ . '/templates/html-elements';
+} else {
+    $dirs[] = __DIR__ . '/../../__is_embed_somewhere/php/html-elements'; 
+}
+
+
+
+
+$debug = false;
+
+
+
+
 
 $loader = new Twig_Loader_Filesystem($dirs);
 $twig = new Twig_Environment($loader, ['debug' => $debug]);
@@ -55,7 +88,7 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
 
 $content = file_get_contents($template);
 
-
+ 
 // if (strpos($content, "block('bar_brand')") === false) {
 
 // 	throw new Exception("Missing mandatory blocks!", 1);

@@ -1,3 +1,8 @@
 .hero {
   height: 66vh;
 }
+
+#myimg3
+{
+  display: none;
+}

@@ -1,14 +1,20 @@
-{% use '_blocks.html.twig' %}
+{# Looking fot these files in given path #}
+{% use '_metas-and-scripts.html.twig' %}
+{% use '_header-and-share.html.twig' %}
+{% use '_html-elements.html.twig' %}
 
 <!DOCTYPE HTML>
 
 <html lang="fr" style="background:#202124;"> 
 	<head>
+		{{ block('consent') }} 
+
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+		<!-- <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet"> -->
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 		<link rel="stylesheet" href="css/main.css">
@@ -24,279 +30,781 @@
 		<div class="swiper scene fixed w-full bg-center bg-cover"> 
 			<div class="swiper-wrapper">
 				<!-- Slides -->
-				<div id="swiper-slide-00" class="swiper-slide bg-cover relative"><div class="gradient absolute w-full h-full md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}0{%endif%}</p></div>
-				<div id="swiper-slide-01" class="swiper-slide bg-center bg-cover relative"><div class="gradient absolute w-full h-full md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}1{%endif%}</p></div>
-				<div id="swiper-slide-02" class="swiper-slide bg-cover relative"><div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}2{%endif%}</p></div>
-				<div id="swiper-slide-03" class="swiper-slide bg-cover relative"><div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}3{%endif%}</p></div>
-				<div id="swiper-slide-04" class="swiper-slide bg-cover relative"><div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}4{%endif%}</p></div>
-				<div id="swiper-slide-05" class="swiper-slide bg-cover relative"><div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}5{%endif%}</p></div>
-				<div id="swiper-slide-06" class="swiper-slide bg-cover relative"><div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}5{%endif%}</p></div>
-				<div id="swiper-slide-07" class="swiper-slide bg-cover relative"><div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}5{%endif%}</p></div>
-				<div id="swiper-slide-08" class="swiper-slide bg-cover relative"><div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}5{%endif%}</p></div>
-				<div id="swiper-slide-09" class="swiper-slide bg-cover relative"><div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}5{%endif%}</p></div>
-				<div id="swiper-slide-10" class="swiper-slide bg-cover relative"><div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div><p style="font-size:96px; color:red;">{%if debugSlider %}5{%endif%}</p></div>
-				<div id="swiper-slide-11" class="swiper-slide bg-center bg-cover relative" style="background:#202124;"><div class="gradient absolute w-full h-1/2 bottom-0"></div><h1 style="font-size:96px; color:red;">{%if debugSlider %}footer{%endif%}</h1></div>
+				<div id="swiper-slide-00" class="swiper-slide bg-cover relative">
+					<div class=" gradient absolute w-full h-full md:h-1/2 bottom-0"></div>
+					<div class="scene-container scene-intro absolute h-full  relative left-1/2">
+						<figure class="intro-amit-elems relative opacity-10">
+							<img src="img/this/intro-amit-blank.svg" alt="" class="intro-amit-blank h-full">
+							<img src="img/this/intro-amit-corps-2.svg" alt="" class="intro-amit intro-amit-corps absolute top-1/2 left-1/2 max-h-none max-w-none">
+							<!-- <img src="img/this/intro-amit-pupilles.svg" alt="" class="intro-amit intro-amit-pupilles absolute top-1/2 left-1/2 max-h-none max-w-none"> -->
+							<img src="img/this/intro-amit-yeux-ouverts.svg" alt="" class="intro-amit intro-amit-yeux-ouverts absolute top-1/2 left-1/2 max-h-none max-w-none">
+							<img src="img/this/intro-amit-yeux-fermes.svg" alt="" class="intro-amit intro-amit-yeux-fermes absolute top-1/2 left-1/2 max-h-none max-w-none">
+						</figure>
+						
+						<!-- {{ block('scenehero') }} -->
+					</div>				
+				</div>
+				
+				<div id="swiper-slide-01" class="swiper-slide bg-center bg-cover relative">
+					<div class=" gradient absolute w-full h-full md:h-1/2 bottom-0"></div>
+					<div class="scene-container scene-center">
+						{{ block('scene01') }}
+					</div>
+				</div>
+
+				<div id="swiper-slide-02" class="swiper-slide bg-cover relative">
+					<div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div>
+					{{ block('andreoli1') }}
+				</div>
+
+				<div id="swiper-slide-03" class="swiper-slide bg-cover relative">
+					<div class=" gradient absolute w-full h-full md:h-1/2 bottom-0"></div>
+					<div class="scene-container scene-right">
+						{{ block('scene02') }}
+					</div>
+				</div>
+
+				<div id="swiper-slide-04" class="swiper-slide bg-cover relative">
+					<div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div>
+					{{ block('parein1') }}
+				</div>
+
+				<div id="swiper-slide-05" class="swiper-slide bg-cover relative">
+					<div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div>
+					<div class="scene-container scene-left">
+						{{ block('scene03') }}
+					</div>
+				</div>
+
+
+				<div id="swiper-slide-06" class="swiper-slide bg-cover relative">
+					<div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div>
+					<div class="scene-container scene-center">
+						{{ block('scene04') }}
+					</div>
+				</div>
+
+				<div id="swiper-slide-07" class="swiper-slide bg-cover relative">
+					<div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div>
+					{{ block('andreoli2') }}
+				</div>
+
+				<div id="swiper-slide-08" class="swiper-slide bg-cover relative">
+					<div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div>
+					{{ block('tatone1') }}
+				</div>
+
+				<div id="swiper-slide-09" class="swiper-slide bg-cover relative">
+					<div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div>
+					{{ block('andreoli3') }}
+				</div>
+
+				<div id="swiper-slide-10" class="swiper-slide bg-cover relative">
+					<div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div>
+					
+					<div class="scene-container scene-right">
+						{{ block('scene0506') }}
+					</div>
+				</div>
+
+
+				<div id="swiper-slide-20" class="swiper-slide bg-cover relative">
+					<div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div>
+					
+					<div class="scene-container scene-left">
+						{{ block('scene07') }}
+					</div>
+				</div>
+
+				<div id="swiper-slide-11" class="swiper-slide bg-cover relative">
+					<div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div>
+					{{ block('tatone2') }}
+				</div>
+
+
+				<div id="swiper-slide-12" class="swiper-slide bg-cover relative">
+					<div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div>
+					{{ block('scene08') }}
+				</div>
+
+
+				<div id="swiper-slide-13" class="swiper-slide bg-center bg-cover relative" style="background:#202124;">
+					<div class="gradient absolute w-full h-1/2 bottom-0"></div>
+					<div class="scene-container scene-left  relative">
+						{{ block('end1') }}
+					</div>
+					<div class="scene-container scene-right">
+						{{ block('end2') }}
+					</div>
+					
+				</div>
+
+				
+
+				<div id="swiper-slide-14" class="swiper-slide bg-cover relative">
+					<div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div>
+
+					<div class="scene-container scene-right ">
+						{{ block('scene06sv') }}
+					</div>
+					<div class="scene-container scene-left relative">
+						{{ block('scene06amit') }}
+					</div>
+					
+					
+				</div>
+
+				<div id="swiper-slide-outro" class="swiper-slide bg-cover relative">
+					<div class="gradient absolute w-full h-2/3 md:h-1/2 bottom-0"></div>
+				</div>
 			</div>
-			<!-- If we need pagination -->
-			<!-- <div class="swiper-pagination"></div> -->
-
-			<!-- If we need navigation buttons -->
-			<!-- <div class="swiper-button-prev"></div> -->
-			<!-- <div class="swiper-button-next"></div> -->
-
-			<!-- If we need scrollbar -->
-			<!-- <div class="swiper-scrollbar"></div> -->
 		</div>
 		
-		<div class="container max-w-screen-2xl px-4 relative z-10">
+		<div class="story container max-w-screen-2xl px-4 relative z-10">
 			
 
-			<section class="section0 container intro py-8 mb-96 max-w-6xl bg-transparent overflow-auto relative">
-				<div class="text-center md:text-left container textbox w-full md:w-1/2 absolute md:bottom-1/2 md:translate-y-2/4 bottom-4 translate-y-0">
-					<h1 class="text-white text-3xl md:text-6xl mb-3 md:mb-6">Qui sont les skieurs suisses qui ramèneront une médaille?</h1>
+			<section id="trigger0" class="section0 trigger container intro max-w-6xl bg-transparent overflow-auto relative overflow-hidden">
+				<div class="intro-elements text-center container textbox w-full absolute top-1/2 -translate-y-custom-intro">
+ 
+
+					<span class="intro-auteur relative z-10"><a href="https://www.blick.ch/fr/auteurs/amit-juillard-journaliste-blick-id16519941.html#" target="_blank" class="underline ">Amit Juillard</a></span>
+					<div class="textbox max-w-sm md:max-w-md w-full mx-auto"> 
+						<figure class="table-container w-full relative">
+							<img src="img/this/flare.svg" alt="">
+							<img src="img/this/table1.svg" alt="" class="intro-table1 absolute top-0">
+							<img src="img/this/table2.svg" alt="" class="intro-table2 absolute top-0">
+							<img src="img/this/table3.svg" alt="" class="intro-table3 absolute top-0">
+							<img src="img/this/table4.svg" alt="" class="intro-table4 absolute top-0">
+						</figure>
+					</div>
+					<h1 class="intro-h1 text-center mb-3 md:mb-6">
+						<span class="intro-h1a block w-full">J’ai infiltré un forum </span>
+						<span class="intro-h1b block w-full">cannibale</span>
+					</h1>
+					<span class="intro-st st antialiased">À table !</span>
+
+
+
 					<!-- <p class="font-light text-white text-lg md:text-xl opacity-80">Demandez le programme! Voici ce qui attend nos stars</p> -->
-					<p class="text-white text-l md:text-xl  mb-2 md:mb-4 opacity-70">Dès ce lundi 6 février, les stations de Courchevel et Méribel accueillent les Championnats du monde de ski alpin. Cette 47e édition devrait sourire aux Suisses, dont la délégation sera emmenée par Lara Gut-Behrami et Marco Odermatt. Découvrez les chances de médaille pour chaque athlète et chaque course.
-					</p>
-					{{ block('scroller') }}
+					<!-- <p class="text-white text-l md:text-xl  mb-2 md:mb-4 opacity-70">
+						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam labore vero adipisci praesentium voluptatibus veritatis, doloribus corrupti voluptas. Sunt cum commodi eveniet mollitia dolor amet facilis dicta quam animi placeat.
+					</p> -->
+					<!-- {{ block('scroller') }} -->
 				</div> 
-				<div id="trigger0" class="trigger absolute top-8 w-full h-1"></div>
-			</section>      
+				
+			</section>    
 			
-			<section class="section1 container py-8 max-w-6xl overflow-auto relative">
-				<div class="textbox w-full md:w-1/2 p-0 md:p-4">
-					<p class="font-bold md:text-left text-2xl md:text-5xl text-white">Marco Odermatt</p>
-					<div class="grid grid-cols-1 py-4">
-						<span class="block text-white opacity-70 font-bold underline underline-offset-1 mb-2">Chance de médaille</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Combiné alpin le 7 février</span>
-							<img src="img/star1.svg" alt="Icône 1 étoile1" class="translate-y-1.5">
-						</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Super-G le 9 février</span>
-							<img src="img/star5.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Descente le 12 février</span>
-							<img src="img/star4.svg" alt="Icône 4 étoiles" class="translate-y-1.5">
-						</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Géant le 17 février</span>
-							<img src="img/star5.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-					</div>
-					<p class="text-white text-l md:text-xl mb-4">Marco Odermatt survole cette saison. Sa blessure à un genou n’est plus qu’un mauvais souvenir. Le&nbsp;Nidwaldien de 25 ans peut viser trois titres mondiaux. Il pourrait même se lancer dans le combiné alpin. En Savoie, le nouveau roi du ski cherchera aussi à faire oublier ses premiers Championnats du monde ratés, en 2021 à Cortina (It).</p>
-					<!-- <p class="text-white text-xs opacity-70">Legende de la photo/crédit</p> -->
-				</div>
-				<div id="trigger1" class="trigger absolute top-8 w-full h-1"></div>
-			</section>      
+			<section class="chapeau container max-w-2xl">
+				<div class="spacer-sm"></div>
+				<h2 class="text-white text-center text-xl md:text-2xl">
+					Certaines personnes sont très excitées sexuellement par l’idée de manger quelqu’un ou de se faire engloutir. Sur internet, un forum donne vie à ces fantasmes. Je m’y suis inscrit avec la volonté de faire une rencontre.
+				</h2> 
+				<div class="spacer"></div>
+			</section>
 			
-			<section class="section2 container py-8 max-w-6xl overflow-auto relative">
-				<div class="textbox w-full md:w-1/2 p-0 md:p-4">
-					<p class="font-bold md:text-left text-2xl md:text-5xl text-white">Lara Gut-Behrami</p>
-					<div class="grid grid-cols-1 py-4">
-						<span class="block text-white opacity-70 font-bold underline underline-offset-1 mb-2">Chance de médaille</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Super-G le 8 février</span>
-							<img src="img/star4.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Descente le 11 février</span>
-							<img src="img/star5.svg" alt="Icône 4 étoiles" class="translate-y-1.5">
-						</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Géant le 16 février</span>
-							<img src="img/star5.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
+			<section  class="container max-w-3xl overflow-auto relative">
+				<div class="textbox w-full p-0 md:p-4">
+
+					
+
+					<div id="trigger-scene-1">
+						<p class="antialiased text-l md:text-xl">
+							Otto789* a 65 ans. Vous pourriez le croiser le matin, dans le bus, au pub, le mercredi, ou le dimanche à l’église. Surtout si vous habitez à Brême, dans le nord de l’Allemagne, comme lui. 
+						</p>
+
+						<div class="spacer"></div>
+	
+						<p class="antialiased text-l md:text-xl">
+							Sur sa photo de profil, un portrait au crayon d’un chef. Moustache touffue, lunettes rondes et toque blanche. Mais lui ne rêve pas de servir le soufflé parfait dans un restaurant étoilé. Non, Otto789 aimerait plutôt manger une femme pendant qu’elle vit encore, à commencer par le haut de ses bras ou ses joues, et après s’être enquis de ses désirs à elle. Une fois repu, il la bouchoyerait, en ferait des saucisses, qu’il congèlerait et consommerait des mois durant. Enfin, si tout cela était légal, précise-t-il quand même. 
+						</p>
+
+						<div class="spacer"></div>
+
 					</div>
-					<p class="text-white text-l md:text-xl mb-4">Lara Gut-Behrami doit défendre deux titres de championne du monde, en géant et en super-G. Toujours dans le coup cette saison, la Tessinoise sera difficile à battre. La skieuse de 31 ans peut viser trois médailles. Elle en compte déjà huit dans son riche palmarès.</p>
-					<!-- <p class="text-white text-xs opacity-70">Legende de la photo/crédit</p> -->
+					
+					<div id="trigger-scene-1b">
+
+						<p class="antialiased text-l md:text-xl">
+							SubMary4Use*, elle, souhaiterait être guillotinée avant d’être bouffée. Et, si possible, elle se taperait bien un orgasme à l’instant où la lame s’insère avec fracas entre ses cervicales. Jul4kinkyfun* voudrait se faire éventrer, mais pas mourir tout de suite. CutterGirl* n’est «ni folle ni suicidaire, juste intensément et fièrement soumise. [Se laisser engloutir] serait le cadeau ultime fait à [son] propriétaire et le plus incroyable acte de soumission.»
+						</p>
+
+						<div class="spacer"></div>
+					</div>
+
+					<div id="trigger-scene-1c">
+
+						<p class="antialiased text-l md:text-xl">
+							Bienvenue sur le forum <a href="https://dolcettgirls.com/" target="_blank" class="decoration-2 underline font-semibold">DolcettGirls</a>: un salon de discussions virtuel pour cannibales, que j’ai infiltré. Ici, on aime bander en lisant des histoires trashs et morbides, en imaginant être un boucher ou une entrecôte parisienne. On s’y échange des bons plans pour mater des pornos thématiques, on y publie des photomontages (parfois très (trop?) réalistes) et des dessins de femmes rôties, une pomme dans la bouche. Et on cherche des convives et du gibier humain pour une partie de chasse suivie d’un cocktail dinatoire. Mais tout est toujours sexuel.
+						</p>
+
+						<div id="trigger-notif-andreoli1" class="block notification notification-andreoli1 is-squizzed is-hidden is-collapsed is-highlighted">
+							<div class="notification-circle">
+								<img src="img/this/notification-icon.svg" alt="" class="notification-icon">
+								<span class="notification-dot is-hidden"></span>
+							</div>
+							<span class="notification-label is-hidden">
+								1 nouveau message<br>
+								Cliquez pour lire
+							</span>
+						</div>
+
+						<div class="spacer"></div>
+
+						<p class="antialiased text-l md:text-xl">
+							Dans ce lieu dédié au fantasme, la frontière avec la réalité est parfois aussi fine et floue qu’une feuille de riz. Les modératrices et modérateurs interviennent d’ailleurs souvent. Par exemple, lorsque Julie34* dit chercher un charcutier pour de vrai. Ou quand CannibalEvil* raconte que sa copine a tué pour lui, qu’une autre fille s’est suicidée pour lui, et qu’il kiffe ça. La <span class="italic">chat room</span>, où on conversait en direct, a été fermée. Il en va de la survie du forum.
+						</p>
+
+						<div class="spacer"></div>
+	
+						<p class="antialiased text-l md:text-xl">
+							Perro Loco — pseudo du «maire» et fondateur de la petite ville imaginaire de Dolcett, un dessinateur canadien — en sait quelque chose. Similaire, son précédent site avait dû être fermé au début des années 2000. C’est sur son Cannibal Cafe Forum que l’informaticien <a href="https://fr.wikipedia.org/wiki/Armin_Meiwes" target="_blank" class="underline decoration-2 font-semibold">Arwin Meiwes</a> («le cannibale de Rotenburg») avait recruté sa victime consentante, Bernd Brandes, en 2001, comme le rappellent le magazine français «<a href="https://www.neonmag.fr/quand-tu-mauras-mange-je-vivrai-en-toi-enquete-au-pays-des-cannibales-515510.html" target="_blank" class="underline decoration-2 font-semibold">NEON</a>» et le site américain «<a href="https://www.vice.com/en/article/yvqwwk/welcome-to-the-tasteless-world-of-online-cannibalism" target="_blank" class="underline decoration-2 font-semibold">Vice</a>».
+						</p>
+
+						<div class="spacer"></div>
+
+					</div>
+				
 				</div>
-				<div id="trigger2" class="trigger absolute top-8 w-full h-1"></div>
+			</section>   
+			
+			<section class="container max-w-6xl overflow-auto relative">
+				<div class="textbox w-full md:w-1/2 p-0 md:p-4">
+
+					<div id="trigger-scene-2">
+
+						<p class="antialiased text-l md:text-xl">
+							La suite? Après avoir eu un rapport sexuel, les deux hommes décident ensemble de trancher le pénis de Bernd Brandes, de le cuisiner, et de le déguster. Trois heures plus tard, toujours avec l’accord de son invité en pleine agonie, Arwin Meiwes le poignarde à la gorge, avant de l’étriper et de garder les meilleurs morceaux au congélateur, pour les consommer plus tard.  
+						</p>
+
+						<div class="spacer"></div>
+
+						<p class="antialiased text-l md:text-xl">
+							Plus d’un an après, il part à nouveau à la recherche d’un partenaire sur la Toile. Mais finit par être arrêté. En deuxième instance, il est condamné à la prison à vie, en mai 2006, pour meurtre et atteinte à la paix des morts. En prison, il est devenu végétarien par souci pour l’écologie, raconte le «<a href="https://www.dailymail.co.uk/news/article-495132/Worlds-infamous-cannibal-vegetarian.html" target="_blank" class="underline decoration-2 font-semibold">Daily Mail</a>».
+						</p>
+
+						<div id="trigger-notif-parein1" class="block notification notification-parein1 is-squizzed is-hidden is-collapsed is-highlighted">
+							<div class="notification-circle">
+								<img src="img/this/notification-icon.svg" alt="" class="notification-icon">
+								<span class="notification-dot is-hidden"></span>
+							</div>
+							<span class="notification-label is-hidden">
+								1 nouveau message<br>
+								Cliquez pour lire
+							</span>
+						</div>
+
+						<div class="spacer"></div>
+
+						<p class="antialiased text-l md:text-xl">
+							A chaque fait divers cannibale, nos sociétés sont aussi horrifiées que fascinées. Netflix l’a bien compris. «Don’t F**k with Cats», qui traque le criminel canadien Luka Rocco Magnotta («le dépeceur de Montréal») a été l’un des documentaires les plus regardés sur la plateforme de streaming en 2019. 
+						</p>
+	
+						<div class="spacer"></div>
+
+						<p class="antialiased text-l md:text-xl">
+							En 2022, «Dahmer», fiction basée sur la vie du tueur en série étasunien Jeffrey Dahmer («le cannibale de Milwaukee»), a été visionnée pendant plus d’un milliard d’heures. «Tudum!» Seules <a href="https://www.blick.ch/fr/pop-culture/series-tv/suite-et-presque-fin-sur-netflix-stranger-things-amorce-sa-conclusion-en-beaute-id17522119.html" target="_blank" class="underline font-semibold decoration-2">la saison 4 de «Stranger Things»</a> et la première de «<a href="https://www.blick.ch/fr/news/suisse/poulpe-fiction-a-la-recre-squid-game-impose-sa-violence-dans-les-ecoles-id16905749.html" target="_blank" class="underline font-semibold decoration-2">Squid Game</a>» avaient réussi cet exploit avant. 
+						</p>
+
+						<div class="spacer"></div>
+					
+					</div>
+
+					<div id="trigger-scene-2b">
+						
+						<p class="antialiased text-l md:text-xl">
+							L’appétit du grand écran pour les pulsions anthropophages existe depuis longtemps. L'une des dernières sorties en date: «Bones and All», avec Timothée Chalamet, a valu un lion d’argent à Luca Guadagnino, son réalisateur, et le prix du meilleur espoir à Taylor Russell, lors de la prestigieuse Mostra de Venise en 2022.
+						</p>
+
+						<div class="spacer"></div>
+					
+					</div>
+					
+				</div>
+			</section>   
+			
+			<section class="trigger container max-w-6xl overflow-auto relative">
+				<div class="textbox w-full md:w-1/2 md:translate-x-full p-0 md:p-4">
+
+					<div id="trigger-scene-3">
+						
+						<p class="antialiased text-l md:text-xl">
+							Ironie du sort, Luca Guadignino est aussi l’auteur de «Call Me by Your Name» (2017), avec Timothée Chalamet et Armie Hammer. Armie Hammer qui a été accusé de viol et de penchants cannibales et vampiriques par plusieurs ex-compagnes début 2021. Allégations que le trentenaire a toujours niées.  
+						</p>
+
+						<div class="spacer"></div>
+
+					</div>
+
+					<div id="trigger-scene-3b">
+					
+						<p class="antialiased text-l md:text-xl">
+							L’actu, la pop culture: autant d’engrais pour cultiver le jardin secret de milliers (millions?) de personnes, où les jambons humains poussent comme du maïs Monsanto, et faire vivre le forum DolcettGirls. Le plus populaire du genre: il compte désormais quelque 60’000 membres.
+						</p>
+
+						<div class="spacer"></div>
+					
+					</div>
+
+					<div id="trigger-scene-3c">
+
+						<p class="antialiased text-l md:text-xl">
+							Pour s’inscrire, il suffit d’inventer un alias et un mot de passe. Et d’attendre. Dans les 24 heures, on m’ouvrait les portes d’un monde nouveau, où il y a deux règles principales: pas d’histoires impliquant des mineurs et rester dans le fantasme.
+						</p>
+
+						<div class="spacer"></div>
+					
+					</div>
+				
+				</div>
+			</section>    
+
+			<section class="container max-w-3xl overflow-auto relative">
+				<div class="textbox w-full p-0 md:p-4">
+
+					<div id="trigger-scene-4">
+						
+						<p class="antialiased text-l md:text-xl">
+							Ici, un mème (blagueur?) présente une photo d’un homme et d’une femme adeptes de musculation accolées à une image de deux hamburgers, avec, pour titre, le hashtag #couplegoals («objectifs de couple», en français). Là, Reader2020* déclare son amour pour les activistes de PETA, organisation de défense des animaux, qui ont l’habitude de se mettre en scène dans des barquettes ensanglantées ou de se déguiser en lapin. 
+						</p>
+
+						<div class="spacer"></div>
+					</div>
+
+					<div id="trigger-scene-4b">
+						<p class="antialiased text-l md:text-xl">
+							Plus loin, des femmes remplissent des formulaires et postulent pour devenir du «bétail», en joignant une photo dénudée. Tiffany Melzer*, 25 ans, 55 kg, a «toujours rêvé de se faire embrocher à travers mon cul et ma chatte et d’être rôtie au-dessus d’un feu de bois».
+						</p>
+
+						<div class="spacer"></div>
+					</div>
+
+					<div id="trigger-scene-4c">
+						<p class="antialiased text-l md:text-xl">
+							Les rôles sont clairs: sauf exception, les hommes manient le couteau et le barbecue, les femmes sont leurs pièces de bidoche. Littéralement, des «femmes-viande» («meatgirls», en anglais).
+						</p>
+
+						<div id="trigger-notif-andreoli2" class="block notification notification-andreoli2 is-squizzed is-hidden is-collapsed is-highlighted mb-6" slide-trigger="8">
+							<div class="notification-circle">
+								<img src="img/this/notification-icon.svg" alt="" class="notification-icon">
+								<span class="notification-dot is-hidden"></span>
+							</div>
+							<span class="notification-label is-hidden">
+								1 nouveau message<br>
+								Cliquez pour lire
+							</span>
+						</div>
+
+						<div id="trigger-notif-tatone1" class="block notification notification-tatone1 is-squizzed is-hidden is-collapsed is-highlighted mb-6 mt-0" slide-trigger="9">
+							<div class="notification-circle">
+								<img src="img/this/notification-icon.svg" alt="" class="notification-icon">
+								<span class="notification-dot is-hidden"></span>
+							</div>
+							<span class="notification-label is-hidden">
+								1 nouveau message<br>
+								Cliquez pour lire
+							</span>
+						</div>
+
+						<div id="trigger-notif-andreoli3" class="block notification notification-andreoli3 is-squizzed is-hidden is-collapsed is-highlighted mt-0" slide-trigger="10">
+							<div class="notification-circle">
+								<img src="img/this/notification-icon.svg" alt="" class="notification-icon">
+								<span class="notification-dot is-hidden"></span>
+							</div>
+							<span class="notification-label is-hidden">
+								1 nouveau message<br>
+								Cliquez pour lire
+							</span>
+						</div>
+					</div>
+
+					<div class="spacer"></div>
+				
+				</div>
+			</section>  
+
+			<section class="container max-w-6xl overflow-auto relative">
+				<div class="textbox w-full md:w-1/2 p-0 md:p-4">
+
+					<div id="trigger-scene-5">
+
+						<p class="antialiased text-l md:text-xl">
+							Y a-t-il des Suissesses et des Suisses dans la salle? Je tente ma chance. J’ouvre une discussion publique, en anglais. «Bonjour tout le monde!!! Je me demandais s’il y avait des Suisses parmi vous? Je me sens seul parfois par ici [emoji rieur].» Une première réponse, insatisfaisante, fuse: «Ce serait plutôt improbable que tu sois le seul en Suisse. Mais dans un monde fantasmé, en quoi le lieu d’habitation est-il important?» Touché.
+						</p>
+
+						<div class="spacer"></div>
+
+					</div>
+
+					<div id="trigger-scene-5b">
+
+						<p class="antialiased text-l md:text-xl">
+							Au fil de mes pérégrinations, je tombe sur un jeu, créé par un utilisateur. Gratuitement, je télécharge son application. Le pitch est simple: Roslynd, une hôtesse, me souhaite la bienvenue dans le très exclusif (fictif) Kitchen Club. Ce soir, je suis au fourneau. Je peux choisir quelle femme je souhaite mitonner. Les avatars ressemblent à ceux d’un jeu vidéo. Il y a une rousse, une Asiatique, une Noire, une deuxième rousse et une blonde aux cheveux courts. Allez, c’est la seconde rouquine qui passera à la casserole. Clic. Des images me transportent d’une étape de la préparation du souper à la suivante. Roslynd est «excitée» de voir sa congénère en train de rôtir comme un cochon de lait au-dessus d’un foyer affamé.
+						</p>
+					
+						<div class="spacer"></div>
+
+					</div>
+
+					
+				</div>
 			</section> 
+
+			<section class="container max-w-2xl overflow-visible relative">
+				<div class="textbox w-full p-0 md:p-4">
+
+					<div id="trigger-scene-6z">
+
+						<p class="antialiased text-l md:text-xl">
+							Après quelques jours, ça mord à mon hameçon. Ma publication a été vue 44 fois. Je reçois deux messages privés. Je vais enfin pouvoir poser des questions à des compatriotes. SmilingVilain* est le premier à s’être annoncé. En anglais d’abord, la conversation se poursuivra en français, sur plusieurs jours. Mon interlocuteur est méfiant.  
+						</p>
+	
+						<div class="spacer"></div>
+
+					</div>
+
+					<div id="trigger-scene-6">
+						
+						<p class="italic dialog dialog-right dialog-1 antialiased text-l md:text-xl is-chat rounded-3xl  w-11/12 md:w-10/12 ml-auto">
+							<img src="img/this/msg-triangle-col2.svg" alt="" class="msg-triangle msg-triangle-top-right absolute">
+							Bonjour, je viens de lire ton post. Qui es-tu?
+						</p>
+
+						<div class="typing typing-right typing-1 rounded-full flex justify-center relative">
+							<img src="img/this/msg-triangle.svg" alt="" class="msg-triangle msg-triangle-sm msg-triangle-top-right absolute top-0 right-0 ">
+							<span class="dot dot1 mx-0.5 rounded-full"></span>
+							<span class="dot dot2 mx-0.5 rounded-full"></span>
+							<span class="dot dot3 mx-0.5 rounded-full"></span>
+						</div>
+
+						<div class="spacer-xs"></div>
+
+						<p class="italic dialog dialog-left dialog-2 antialiased text-l md:text-xl is-chat rounded-3xl w-11/12 md:w-10/12  mr-auto">
+							<img src="img/this/msg-triangle-col1.svg" alt="" class="msg-triangle msg-triangle-top-left absolute">
+							Salut, je ne suis pas sûr de comprendre ta question. Je suis un mec suisse, de la partie francophone. Tu vis aussi en Suisse? Qu’est-ce qui te plait sur ce forum?
+						</p>
+
+						<div class="typing typing-left typing-2 rounded-full flex justify-center relative">
+							<img src="img/this/msg-triangle.svg" alt="" class="msg-triangle msg-triangle-sm msg-triangle-top-left absolute top-0 right-0 ">
+							<span class="dot dot1 mx-0.5 rounded-full"></span>
+							<span class="dot dot2 mx-0.5 rounded-full"></span>
+							<span class="dot dot3 mx-0.5 rounded-full"></span>
+						</div>
+
+						<div class="spacer"></div>
+					</div>
+
+					<div id="trigger-scene-6b">
+						
+						<p class="italic dialog dialog-right dialog-3 antialiased text-l md:text-xl is-chat rounded-3xl w-11/12 md:w-10/12  ml-auto">
+							<img src="img/this/msg-triangle-col2.svg" alt="" class="msg-triangle msg-triangle-top-right absolute">
+							Bonjour, merci pour ta réponse. Oui, on est dans le même pays ;-). Je ne viens pas très souvent sur ce forum, mais il y a des fois des images et des sujets appétissants. Et des gens intéressants…
+						</p>
+
+						<div class="typing typing-right typing-3 rounded-full flex justify-center relative">
+							<img src="img/this/msg-triangle.svg" alt="" class="msg-triangle msg-triangle-sm msg-triangle-top-right absolute top-0 right-0 ">
+							<span class="dot dot1 mx-0.5 rounded-full"></span>
+							<span class="dot dot2 mx-0.5 rounded-full"></span>
+							<span class="dot dot3 mx-0.5 rounded-full"></span>
+						</div>
+
+						<div class="spacer-xs"></div>
+
+						<p class="italic dialog dialog-left dialog-4 antialiased text-l md:text-xl is-chat rounded-3xl w-11/12 md:w-10/12  mr-auto">
+							<img src="img/this/msg-triangle-col1.svg" alt="" class="msg-triangle msg-triangle-top-left absolute">
+							Hey, cool! Intéressant. T’es aussi en Suisse romande? C’est quoi qui te fait kiffer par ici? Ton fantasme, c’est de manger ou d’être mangé?
+						</p>
+
+						<div class="typing typing-left typing-4 rounded-full flex justify-center relative">
+							<img src="img/this/msg-triangle.svg" alt="" class="msg-triangle msg-triangle-sm msg-triangle-top-left absolute top-0 right-0 ">
+							<span class="dot dot1 mx-0.5 rounded-full"></span>
+							<span class="dot dot2 mx-0.5 rounded-full"></span>
+							<span class="dot dot3 mx-0.5 rounded-full"></span>
+						</div>
+
+						<div class="spacer"></div>
+
+					</div>
+
+					<div id="trigger-scene-6c">
+						
+						<p class="italic dialog dialog-right dialog-5 antialiased text-l md:text-xl is-chat rounded-3xl w-11/12 md:w-10/12  ml-auto">
+							<img src="img/this/msg-triangle-col2.svg" alt="" class="msg-triangle msg-triangle-top-right absolute">
+							Bonsoir, non, non, je suis en Suisse, mais pas dans la partie romande. Mon fantasme, c’est le «mangeur de femmes». Mais je viens de découvrir que l’autre côté du «jeu» m’excite aussi… J’ai des fantasmes dans cette direction depuis toujours. Et toi?
+						</p>
+
+						<div class="typing typing-right typing-5 rounded-full flex justify-center relative">
+							<img src="img/this/msg-triangle.svg" alt="" class="msg-triangle msg-triangle-sm msg-triangle-top-right absolute top-0 right-0 ">
+							<span class="dot dot1 mx-0.5 rounded-full"></span>
+							<span class="dot dot2 mx-0.5 rounded-full"></span>
+							<span class="dot dot3 mx-0.5 rounded-full"></span>
+						</div>
+
+						<div class="spacer-xs"></div>
+
+						<p class="italic dialog dialog-left dialog-6 antialiased text-l md:text-xl is-chat rounded-3xl w-11/12 md:w-10/12  mr-auto">
+							<img src="img/this/msg-triangle-col1.svg" alt="" class="msg-triangle msg-triangle-top-left absolute">
+							Ciao, très franchement, je découvre un peu ce monde, ça titille ma curiosité. Pour toi, tout ça, c’est un jeu de rôles?
+						</p>
+
+						<div class="typing typing-left typing-6 rounded-full flex justify-center relative">
+							<img src="img/this/msg-triangle.svg" alt="" class="msg-triangle msg-triangle-sm msg-triangle-top-left absolute top-0 right-0 ">
+							<span class="dot dot1 mx-0.5 rounded-full"></span>
+							<span class="dot dot2 mx-0.5 rounded-full"></span>
+							<span class="dot dot3 mx-0.5 rounded-full"></span>
+						</div>
+
+						<div class="spacer"></div>
+
+					</div>
+
+					<div id="trigger-scene-6d">
+						
+						<p class="italic dialog dialog-right dialog-7 antialiased text-l md:text-xl is-chat rounded-3xl w-11/12 md:w-10/12  ml-auto">
+							<img src="img/this/msg-triangle-col2.svg" alt="" class="msg-triangle msg-triangle-top-right absolute">
+							Salut, je trouve surtout super qu’on trouve des personnes pour en parler sur le web. Dans le monde réel, j’ai l’impression que c’est difficile de trouver quelqu’un(e)...
+						</p>
+
+						<div class="typing typing-right typing-7 rounded-full flex justify-center relative">
+							<img src="img/this/msg-triangle.svg" alt="" class="msg-triangle msg-triangle-sm msg-triangle-top-right absolute top-0 right-0 ">
+							<span class="dot dot1 mx-0.5 rounded-full"></span>
+							<span class="dot dot2 mx-0.5 rounded-full"></span>
+							<span class="dot dot3 mx-0.5 rounded-full"></span>
+						</div>
+
+						<div class="spacer-xs"></div>
+
+						<p class="italic dialog dialog-left dialog-8 antialiased text-l md:text-xl is-chat rounded-3xl w-11/12 md:w-10/12  mr-auto">
+							<img src="img/this/msg-triangle-col1.svg" alt="" class="msg-triangle msg-triangle-top-left absolute">
+							Ciao, oui, en effet, je pense que ça doit être compliqué de trouver des gens avec le même fantasme dans la «vraie vie». T’as déjà rencontré des gens après avoir discuté ici? Ce serait quoi le but d’une rencontre, pour toi? Si c’était légal, tu réaliserais ton fantasme?
+						</p>
+
+						<div class="typing typing-left typing-8 rounded-full flex justify-center relative">
+							<img src="img/this/msg-triangle.svg" alt="" class="msg-triangle msg-triangle-sm msg-triangle-top-left absolute top-0 right-0 ">
+							<span class="dot dot1 mx-0.5 rounded-full"></span>
+							<span class="dot dot2 mx-0.5 rounded-full"></span>
+							<span class="dot dot3 mx-0.5 rounded-full"></span>
+						</div>
+
+						<div class="spacer"></div>
+
+					</div>
+
+					<div id="trigger-scene-6e">
+						
+						<p class="italic dialog dialog-right dialog-9 antialiased text-l md:text-xl is-chat rounded-3xl w-11/12 md:w-10/12  ml-auto">
+							<img src="img/this/msg-triangle-col2.svg" alt="" class="msg-triangle msg-triangle-top-right absolute">
+							Salut, oui, absolument, c’est quand même rare. Et non, je n’ai rencontré personne… Toi? [Et si c’était légal…] Hmmmm, probablement [que je le ferais]… Quels sont tes fantasmes?
+						</p>
+
+						<div class="typing typing-right typing-9 rounded-full flex justify-center relative">
+							<img src="img/this/msg-triangle.svg" alt="" class="msg-triangle msg-triangle-sm msg-triangle-top-right absolute top-0 right-0 ">
+							<span class="dot dot1 mx-0.5 rounded-full"></span>
+							<span class="dot dot2 mx-0.5 rounded-full"></span>
+							<span class="dot dot3 mx-0.5 rounded-full"></span>
+						</div>
+
+						<div class="spacer-xs"></div>
+
+						<p class="italic dialog dialog-left dialog-10 antialiased text-l md:text-xl is-chat rounded-3xl w-11/12 md:w-10/12  mr-auto">
+							<img src="img/this/msg-triangle-col1.svg" alt="" class="msg-triangle msg-triangle-top-left absolute">
+							Ciao, merci pour ton message intéressant. En fait, pour être tout à fait honnête, je n’ai pas de fantasme en ce sens. J’explore un peu. Je suis journaliste et j’essaie d’en savoir un peu plus, de comprendre. Est-ce que tu serais prêt à témoigner de manière anonyme ou qu’on se rencontre pour en causer? Cheers!
+						</p>
+
+						<div class="typing typing-left typing-10 rounded-full flex justify-center relative">
+							<img src="img/this/msg-triangle.svg" alt="" class="msg-triangle msg-triangle-sm msg-triangle-top-left absolute top-0 right-0 ">
+							<span class="dot dot1 mx-0.5 rounded-full"></span>
+							<span class="dot dot2 mx-0.5 rounded-full"></span>
+							<span class="dot dot3 mx-0.5 rounded-full"></span>
+						</div>
+
+						<div class="spacer"></div>
+
+					</div>
+
+					<div id="trigger-scene-6f">
+						
+						<p class="italic dialog dialog-right dialog-11 antialiased text-l md:text-xl is-chat rounded-3xl w-11/12 md:w-10/12  ml-auto">
+							<img src="img/this/msg-triangle-col2.svg" alt="" class="msg-triangle msg-triangle-top-right absolute">
+							<span class="wiggle inline-block">J’aurais juré…</span> Malheureusement, je ne suis pas la bonne personne, je ne peux pas t’en dire plus. Et je compte sur toi, on n’a jamais «parlé».  
+						</p>
+
+						<div class="typing typing-right typing-11 rounded-full flex justify-center relative">
+							<img src="img/this/msg-triangle.svg" alt="" class="msg-triangle msg-triangle-sm msg-triangle-top-right absolute top-0 right-0 ">
+							<span class="dot dot1 mx-0.5 rounded-full"></span>
+							<span class="dot dot2 mx-0.5 rounded-full"></span>
+							<span class="dot dot3 mx-0.5 rounded-full"></span>
+						</div>
+
+						<div class="spacer"></div>
+
+						<p class="antialiased text-l md:text-xl">
+							Mon deuxième échange, après avoir commencé en suisse allemand, s’est vite terminé. «Il y a des gens de Suisse ici, mais ils ne bavardent pas trop, m’écrit Quickstep21*. Souvent, les gens ne vont pas te répondre si ton profil ne mentionne pas ton âge et ton sexe.»
+						</p>
+	
+						<div class="spacer"></div>
+
+					</div>
+
+					
+
+				</div>
+			</section>
+
 		
-			<section class="section3 container py-8 max-w-6xl overflow-auto relative">
-				<div class="textbox w-full md:w-1/2 p-0 md:p-4 float-right">
-					<p class="font-bold md:text-left text-2xl md:text-5xl text-white">Wendy Holdener</p>
-					<div class="grid grid-cols-1 py-4">
-						<span class="block text-white opacity-70 font-bold underline underline-offset-1 mb-2">Chance de médaille</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Combiné alpin le 6 février</span>
-							<img src="img/star5.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Parallèle le 15 février</span>
-							<img src="img/star3.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Géant le 16 février</span>
-							<img src="img/star3.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Slalom le 18 février</span>
-							<img src="img/star5.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
+
+			<section class="container max-w-6xl overflow-auto relative">
+				<div class="textbox w-full md:translate-x-full md:w-1/2 p-0 md:p-4">
+
+					
+
+					<div id="trigger-scene-7">
+
+
+						<p class="antialiased text-l md:text-xl">
+							Combien de personnes dans le monde sont-elles concernées par cette paraphilie (mot aujourd’hui préféré à «déviance» ou «perversion» pour désigner une anomalie du fonctionnement sexuel)? Tous les spécialistes du monde médicopsychiatrique que j’ai consultés s’accordent: la voraréphilie est extrêmement rare. La littérature scientifique est quasi inexistante — il existe quelques études de cas anglo-saxonnes, qui ne permettent pas de faire des généralités.
+						</p>
+
+						<div class="spacer"></div>
+					
 					</div>
-					<p class="text-white text-l md:text-xl mb-4">Wendy Holdener va-t-elle lancer la récolte suisse dès la première course? La double championne du monde de la discipline sera l’une des favorites du combiné alpin ce lundi 6 février. La Schwytzoise est entrée dans une autre dimension cette saison en fêtant ses deux premiers succès en slalom. Elle sera aussi candidate à l'or entre les piquets, à condition que Mikaela Shiffrin se rate.
-					</p>
-					<!-- <p class="text-white text-xs opacity-70">Legende de la photo/crédit</p> -->
+
+					<div id="trigger-scene-7b">
+
+						<p class="antialiased text-l md:text-xl">
+							Quelques chiffres permettent de souligner la marginalité de ces désirs. Le forum DolcettGirls accueille 60’000 membres alors que (presque) n’importe qui dans le monde peut y avoir accès. 
+						</p>
+
+						<div class="spacer"></div>
+					
+					</div>
+
+					<div id="trigger-scene-7c">
+
+						<p class="antialiased text-l md:text-xl">
+							Autre élément de réponse: les performances du porno «cannibale» sur des sites populaires comme Xvideos ou Pornhub. Les productions estampillées «Delish Media» ne dépassent jamais les 600’000 vues et en engendrent plus généralement entre 10’000 et 100’000. Une bagatelle par rapport aux dizaines (voire centaines) de millions de coups de souris générés par les films les plus regardés sur ces plateformes, qui sont visitées des milliards de fois par an (2,5 milliards pour Pornhub en 2022). 
+						</p>
+
+						<div id="trigger-notif-tatone2" class="block notification notification-tatone2 is-squizzed is-hidden is-collapsed is-highlighted">
+							<div class="notification-circle">
+								<img src="img/this/notification-icon.svg" alt="" class="notification-icon">
+								<span class="notification-dot is-hidden"></span>
+							</div>
+							<span class="notification-label is-hidden">
+								1 nouveau message<br>
+								Cliquez pour lire
+							</span>
+						</div>
+
+						<div class="spacer"></div>
+
+						<p class="antialiased text-l md:text-xl">
+							Autrice d’un livre sur les fétichismes touchant de près ou de loin à la mort, l’Américaine Victoria Hartmann rejoint la sexologue romande. «J’ai mené une étude sur les nécrophiles, dont la voraréphilie est une sous-catégorie: seul un demi pour cent de mon échantillon d’environ 1000 personnes a répondu avoir réalisé son fantasme, se souvient la sexologue, titulaire de deux doctorats, jointe via Zoom. En d’autres termes, elles avaient eu un rapport avec une personne décédée. Cette statistique indicative ne permet cependant pas de généraliser.»
+						</p>
+
+						<div class="spacer"></div>
+
+					</div>
+
+					
+					
+					
 				</div>
-				<div id="trigger3" class="trigger absolute top-8 w-full h-1"></div>
 			</section> 
+
+
+			<section class="container max-w-3xl overflow-auto relative">
+				<div class="textbox w-full p-0 md:p-4">
+
+					<div id="trigger-scene-8">
+						
+						<p class="antialiased text-l md:text-xl">
+							Perro Loco y va aussi de son estimation. Selon le grand manitou de DolcettGirls, environ une femme sur mille au sein de la communauté est vraiment prête à «aller jusqu’au bout». Sur le forum, bon nombre d’utilisatrices et d’utilisateurs déclarent d’ailleurs ouvertement être incapables de tuer et de manger un autre être humain.
+						</p>
+
+						<div class="spacer"></div>
+
+					
+
+
+						<p class="antialiased text-l md:text-xl">
+							Victoria Hartmann, également directrice de l’Erotic Heritage Museum de Las Vegas, différencie celles et ceux qui sont en proie à une paraphilie violente de celles et ceux qui sont dans l’imaginaire. «Les fétichistes purs ne franchissent jamais la limite. Ils explorent leurs fantasmes sur internet ou avec des partenaires consentants, dans le cadre d’une relation sado-masochiste négociée à l’avance et codifiée.»
+						</p>
+					
+						<div class="spacer"></div>
+
+					</div>
+
+					<div id="trigger-scene-8b">
+						
+						<p class="antialiased text-l md:text-xl">
+							En clair, il s’agit de jeux de rôle où le «boucher» va, par exemple, ficeler son amante comme un rôti, l’enduire de sauce brune et lui mettre une pomme entre les dents. «Les personnes qui trouvent des partenaires ou s’épanouissent sur internet ont tendance à moins avoir peur d’elles-mêmes, à se sentir mieux psychologiquement et à moins pratiquer, constate l’Allemande d’origine. Elles se distinguent clairement des tueurs, qui sont généralement atteints d’un trouble de la personnalité du groupe B (ndlr: dont la psychopathie fait partie).» 
+						</p>
+
+						<div class="spacer"></div>
+
+						<p class="antialiased text-l md:text-xl">
+							L’immense majorité sont donc inoffensifs. «Mais je comprends les craintes, confie la chercheuse. Dahmer ou Magnotta avaient aussi l’air normaux. Celles et ceux que je connais en ont marre d’être comparés à des criminels. Résultat, les portes de leur communauté se ferment toujours plus.» Aucun de ses contacts n’a d’ailleurs accepté de prendre le «risque» de bavarder avec moi.
+						</p>
+
+						<div class="spacer"></div>
+
+					</div>
+
+					<div id="trigger-scene-8c">
+
+						<p class="antialiased text-l md:text-xl">
+							Vous êtes rassurés? Retrouvons Otto789*. «De temps en temps, je tombe sur une vraie <span class="italic">meatgirl</span>, qui me dit avoir trouvé un boucher et qui souhaite mourir. Puis, elle disparaît.» GirlCooker* abonde: «Oui… Elles soutiennent souvent l’avoir trouvé et arrêtent ensuite de publier ici pour une quelconque raison.» Alors, réalité glaçante ou illusion jouissive?
+						</p>
+
+						<div class="spacer"></div>
+
+					</div>
+					
+
+					
+				
+				</div>
+			</section>
+
+			<section class="container max-w-3xl overflow-visible relative">
+				<div class="textbox max-w-sm md:max-w-md w-full p-0 md:p-4 mx-auto">
+
+					
+						
+
+						<p class="italic antialiased text-center text-l md:text-xl p-0 bg-transparent text-white border-0">
+							*Tous les pseudonymes et les noms des membres du forum DolcettGirls ont été changés.
+						</p>
+
+						<div id="trigger-outro">
+							{{ block('outro') }} 
+
+							<div class="spacer-sm"></div>
+							<div class="spacer-sm"></div>
+						</div>
+
+					
+				
+				</div>
+			</section>
 			
-			<section class="section4 container py-8 max-w-6xl overflow-auto relative">
-				<div class="textbox w-full md:w-1/2 p-0 md:p-4">
-					<p class="font-bold md:text-left text-2xl md:text-5xl text-white">Loïc Meillard</p>
-					<div class="grid grid-cols-1 py-4">
-						<span class="block text-white opacity-70 font-bold underline underline-offset-1 mb-2">Chance de médaille</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Combiné alpin le 7 février</span>
-							<img src="img/star5.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Super-G le 9 février</span>
-							<img src="img/star2.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Parallèle le 15 février</span>
-							<img src="img/star3.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Géant le 17 février</span>
-							<img src="img/star5.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Slalom le 19 février</span>
-							<img src="img/star4.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-					</div>
-					<p class="text-white text-l md:text-xl mb-4">Le Romand a débloqué son compteur en Coupe du monde de géant dans la nuit de Schladming (Aut). Un&nbsp;succès qui fait du skieur d’Hérémence un concurrent de Marco Odermatt pour le titre mondial. Il&nbsp;ne faut pas non plus oublier Gino Caviezel, qui est aussi monté sur le podium en Autriche. En combiné, Loïc Meillard aura une chance dès le début de la compétition. Il avait obtenu le bronze aux Mondiaux de Cortina en 2021. Un métal aussi remporté lors du décrié géant parallèle.
-					</p>
-					<!-- <p class="text-white text-xs opacity-70">Legende de la photo/crédit</p> -->
-				</div>
-				<div id="trigger4" class="trigger absolute top-8 w-full h-1"></div>
-			</section> 
-
-			<section class="section5 container py-8 max-w-6xl overflow-auto relative">
-				<div class="textbox w-full md:w-1/2 p-0 md:p-4 float-right">
-					<p class="font-bold md:text-left text-2xl md:text-5xl text-white">Corinne Suter</p>
-					<div class="grid grid-cols-1 py-4">
-						<span class="block text-white opacity-70 font-bold underline underline-offset-1 mb-2">Chance de médaille</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Super-G le 8 février</span>
-							<img src="img/star4.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Descente le 11 février</span>
-							<img src="img/star5.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-					</div>
-					<p class="text-white text-l md:text-xl mb-4">C’est simple, Corinne Suter est tenante du titre de l’épreuve reine, la descente, aussi bien aux Jeux olympiques qu’aux Championnats du monde. La&nbsp;spécialiste de vitesse se sublime lors des grands rendez-vous. Dans les Dolomites, elle avait encore pris l’argent en super-G, complétant un doublé suisse derrière Lara Gut-Behrami. La Schwytzoise s’est fait peur en tombant la semaine dernière à Cortina, mais elle devrait être d’attaque.
-					</p>
-					<!-- <p class="text-white text-xs opacity-70">Legende de la photo/crédit</p> -->
-				</div>
-				<div id="trigger5" class="trigger absolute top-8 w-full h-1"></div>
-			</section> 
-
-			<section class="section6 container py-8 max-w-6xl overflow-auto relative">
-				<div class="textbox w-full md:w-1/2 p-0 md:p-4">
-					<p class="font-bold md:text-left text-2xl md:text-5xl text-white">Niels Hintermann</p>
-					<div class="grid grid-cols-1 py-4">
-						<span class="block text-white opacity-70 font-bold underline underline-offset-1 mb-2">Chance de médaille</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Descente le 12 février</span>
-							<img src="img/star3.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-					</div>
-					<p class="text-white text-l md:text-xl mb-4">L’équipe de Suisse est orpheline de Beat Feuz. Son successeur pourrait s’appeler Niels Hintermann. À&nbsp;27&nbsp;ans, le descendeur a fêté un podium prestigieux (3e) à Kitzbühel (Aut). Un résultat relégué au second plan par le week-end d’adieu de «Kugelblitz».
-					</p>
-					<!-- <p class="text-white text-xs opacity-70">Legende de la photo/crédit</p> -->
-				</div>
-				<div id="trigger6" class="trigger absolute top-8 w-full h-1"></div>
-			</section> 
-
-			<section class="section7 container py-8 max-w-6xl overflow-auto relative">
-				<div class="textbox w-full md:w-1/2 p-0 md:p-4">
-					<p class="font-bold md:text-left text-2xl md:text-5xl text-white">Daniel Yule</p>
-					<div class="grid grid-cols-1 py-4">
-						<span class="block text-white opacity-70 font-bold underline underline-offset-1 mb-2">Chance de médaille</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Slalom le 19 février</span>
-							<img src="img/star4.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-					</div>
-					<p class="text-white text-l md:text-xl mb-4">Le Valaisan devra ronger son frein jusqu’au dernier week-end de compétition. Déjà sacré par équipe aux JO (2018) et aux Mondiaux (2019), le slalomeur est désormais mûr pour décrocher sa première médaille individuelle lors d'un grand événement. Ses deux victoires à Madonna (It) et Kitzbühel cette saison font de lui un favori en puissance à Courchevel. Il ne faut pas oublier Ramon Zenhäusern entre les piquets. Le Haut-Valaisan est revenu sur le podium à Schladming fin janvier (2e).
-					</p>
-					<!-- <p class="text-white text-xs opacity-70">Legende de la photo/crédit</p> -->
-				</div>
-				<div id="trigger7" class="trigger absolute top-8 w-full h-1"></div>
-			</section> 
-
-			<section class="section8 container py-8 max-w-6xl overflow-auto relative">
-				<div class="textbox w-full md:w-1/2 p-0 md:p-4 float-right">
-					<p class="font-bold md:text-left text-2xl md:text-5xl text-white">Michelle Gisin</p>
-					<div class="grid grid-cols-1 py-4">
-						<span class="block text-white opacity-70 font-bold underline underline-offset-1 mb-2">Chance de médaille</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Combiné alpin le 6 février</span>
-							<img src="img/star3.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Super-G le 8 février</span>
-							<img src="img/star3.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Descente le 11 février</span>
-							<img src="img/star2.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Géant le 16 février</span>
-							<img src="img/star0.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Slalom le 18 février</span>
-							<img src="img/star0.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-					</div>
-					<p class="text-white text-l md:text-xl mb-4">Michelle Gisin connaît un hiver compliqué depuis son changement de matériel. Double championne olympique en titre de combiné, l’Obwaldienne aura sa chance dans la discipline. Elle y a déjà remporté le bronze (2021) et l’argent (2019) aux Mondiaux. Plus à l’aise en super-G et en descente, elle semble trop éloignée des meilleures pour espérer monter sur le podium dans les disciplines techniques. 
-
-					</p>
-					<!-- <p class="text-white text-xs opacity-70">Legende de la photo/crédit</p> -->
-				</div>
-				<div id="trigger8" class="trigger absolute top-8 w-full h-1"></div>
-			</section> 
-
-			<section class="section9 container py-8 max-w-6xl overflow-auto relative">
-				<div class="textbox w-full md:w-1/2 p-0 md:p-4">
-					<p class="font-bold md:text-left text-2xl md:text-5xl text-white">Les quatre mousquetaires</p>
-					<div class="grid grid-cols-1 py-4">
-						<span class="block text-white opacity-70 font-bold underline underline-offset-1 mb-2">Chance de médaille</span>
-						<span class="text-white block overflow-auto">
-							<span class="float-left mr-2 opacity-70">Épreuve par équipes</span>
-							<img src="img/star3.svg" alt="Icône 5 étoiles" class="translate-y-1.5">
-						</span>
-					</div>
-					<p class="text-white text-l md:text-xl mb-4">La sélection pour l'épreuve par équipe sera annoncée plus tard. Loïc Meillard, Andrea Ellenberger ou Wendy Holdener font partie des prétendants à une place dans le quatuor. La neige savoyarde avait porté chance aux Suisses, qui ont remporté l’épreuve lors des finales de la Coupe du monde en mars 2022. 
-
-					</p>
-					<!-- <p class="text-white text-xs opacity-70">Legende de la photo/crédit</p> -->
-				</div>
-				<div id="trigger9" class="trigger absolute top-8 w-full h-1"></div>
-			</section> 
-
-			<section class="section10 container py-8 max-w-6xl overflow-auto relative">
-				<div class="textbox w-80 absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4">
+			<section id="trigger-end" class="section10 trigger container py-8 max-w-6xl overflow-auto relative">
+				<div class="textbox w-1/2 absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4 text-center">
 					{{ block('credits') }}  
 				</div>
-				<div id="trigger10" class="trigger absolute top-8 w-full h-1"></div>
+				<!-- <div  class="trigger absolute top-8 w-full h-1"></div> -->
 			</section> 
 			
 			
 			<script src="js/vendor/modernizr-3.11.2.min.js"></script> 
 			<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 			<script src="js/ScrollMagic.min.js"></script>
-			<!-- <script src="js/debug.addIndicators.min.js"></script> -->
+			<script src="js/debug.addIndicators.min.js"></script>
 			<!-- <script src="js/isInViewport.min.js"></script> -->
 			<script src="js/main.js"></script>
+			<!-- <script src="js/s01.js"></script> -->
+			<script src="js/animations.js"></script>
 			<script src="js/headroom.min.js"></script>
 			<script src="https://cdn.tailwindcss.com"></script>
 
